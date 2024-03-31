@@ -235,8 +235,32 @@ main {
             display: flex;
             flex-direction: column;
             gap: 10px;
-            margin: 5px 10px;
             text-align: start;
+            background-color: var(--sixth-color);
+            padding: 32px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+            h2 {
+                text-align: center;
+                cursor: pointer;
+            }
+
+            p {
+                display: none;
+            }
+
+            h2:active,
+            h2:focus,
+            h2:hover {
+                color: var(--third-color);
+            }
+
+            h2:active + p,
+            h2:focus + p,
+            h2:hover + p {
+                display: block;
+            }
+
         }
     }
 
