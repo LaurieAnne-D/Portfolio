@@ -1,0 +1,172 @@
+[
+    {
+        "title": "Kasa",
+        "cover": "assets/images/kasa.png",
+        "demo": "assets/videos/kasademo.gif",
+        "description": [
+            {
+                "title": "Location d'appartements",
+                "client": "Kasa, premier acteur dans la location d'appartements entre particuliers en France.",
+                "details": {
+                    "Présentation": "J'ai travaillé en tant que développeuse front-end sur le projet Kasa, pour une refonte totale du site, incluant une transition de ASP.NET à une stack Javascript moderne. Mon rôle était de concevoir une plateforme web en utilisant React pour le côté front-end, et Node.js pour le côté backend, ainsi que des maquettes fournies par le designer.",
+                    "Objectifs": "L'objectif était de moderniser la plateforme existante, en React, pour optimiser l'expérience utilisateur sur différentes tailles d'écran. J'ai enrichi l'interactivité du site en intégrant des animations CSS tout en introduisant des éléments avancés, comme la création d'un carrousel pour afficher les images des logements, l'implémentation d'un collapse pour améliorer l'UX, et la gestion dynamique des fiches logements à partir de données internes. De plus, j'ai utilisé Sass pour améliorer la gestion des styles."
+                }
+            }
+        ],
+        "url": [
+            {
+                "Lien GitHub": "https://laurieanne-doré.github.io/Kasa/",
+                "Lien du site": "https://github.com/LaurieAnne-Doree/Kasa"
+            }
+        ],
+        "languages": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "infos": [
+            "React",
+            "Responsive design",
+            "Animations CSS"
+        ]
+    },
+    {
+        "title": "Qwenta",
+        "cover": "assets/images/qwenta.png",
+        "demo": "assets/videos/kasademo.gif",
+        "description": [
+            {
+                "title": "Menu Maker",
+                "client": "Qwenta est une entreprise spécialisée dans la conception de solutions digitales adaptées spécifiquement au domaine de la restauration.",
+                "details": {
+                    "Présentation": "J'ai été impliquée dans le projet de développement d'une plateforme novatrice axée sur la découverte de restaurants et de menus correspondant aux préférences individuelles des utilisateurs. Mon rôle consistait à planifier le développement de cette plateforme sans intervenir directement dans le processus de codage. J'ai eu accès aux maquettes, aux spécifications fonctionnelles et aux User Stories du site pour orienter la planification.",
+                    "Objectifs": "Ma mission comprenait une veille technologique continue pour rester à jour sur les dernières tendances et technologies pertinentes pour le projet. Cela impliquait l'utilisation d'un système de veille pour suivre les évolutions dans le domaine de la découverte culinaire en ligne.J'ai été chargée de rédiger les spécifications techniques du projet, ce qui impliquait l'identification des besoins fonctionnels et la décomposition des fonctionnalités en tâches spécifiques. J'ai utilisé un outil de gestion de projet, tel que Notion, pour organiser le projet et créer un tableau Kanban, garantissant ainsi un suivi structuré et efficace du développement.Enfin, j'ai présenté la solution technique élaborée, mettant en avant les choix stratégiques et les fonctionnalités clés de la plateforme de découverte culinaire personnalisée."
+                }
+            }
+        ],
+        "url": [
+            {
+                "Lien GitHub": "https://laurieanne-doré.github.io/Kasa/",
+                "Lien du site": "https://github.com/LaurieAnne-Doree/Kasa"
+            }
+        ],
+        "infos": [
+            "Figma",
+            "Trello",
+            "Notion",
+            "Canva",
+            "Feedly"
+        ]
+    },
+    {
+        "title": "Sophie Bluel",
+        "cover": "assets/images/sophieb.png",
+        "demo": "assets/videos/sblueldemo.gif",
+        "description": [
+            {
+                "title": "Portfolio",
+                "client": "Photographe",
+                "details": {
+                    "Présentation": "En tant que développeuse front-end, j'ai aidé une équipe à finaliser le nouveau site internet d'une architecte d'intérieur. J'étais chargée de développer plusieurs fonctionnalités clés pour le site.",
+                    "Objectifs": "Mon rôle a inclus la création de la page de présentation des travaux de l'architecte, avec des options de filtrage par catégorie, le développement de la page de connexion sécurisée de l'administrateur en utilisant JWT (JSON Web Tokens) pour l'authentification, ainsi que la conception d'une modale permettant à l'architecte d'ajouter ou de supprimer des projets. J'ai utilisé JavaScript pour générer dynamiquement les éléments en communiquant avec une API, ce qui a permis de récupérer, ajouter et supprimer des travaux. Tout au long du projet, nous avons utilisé un tableau Kanban détaillé pour organiser notre travail de manière efficace."
+                }
+            }
+        ],
+        "url": [
+            {
+                "Lien GitHub": "https://laurieanne-doré.github.io/Kasa/",
+                "Lien du site": "https://github.com/LaurieAnne-Doree/Kasa"
+            }
+        ],
+        "languages": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "infos": [
+            "Responsive design",
+            "Animations CSS"
+        ]
+    },
+    {
+        "title": "Print it",
+        "cover": "assets/images/printit.png",
+        "demo": "assets/videos/printitdemo.gif",
+        "description": [
+            {
+                "title": "Imprimerie",
+                "client": "Print-It est une petite entreprise d'impression familiale",
+                "details": {
+                    "Présentation": "Dans ce projet, j'ai exploré les possibilités offertes par JavaScript pour dynamiser le site web statique d'une imprimerie. J'ai ajouté un carrousel interactif pour améliorer l'expérience utilisateur.",
+                    "Objectifs": "Mon rôle principal était de mettre à jour le code HTML existant et d'intégrer le carrousel en JavaScript. Cela m'a permis de comprendre comment JavaScript fonctionne avec le HTML et le CSS pour créer des éléments web dynamiques.J'ai utilisé Visual Studio Code pour coder et GitHub pour gérer les versions de mon travail. Cette expérience pratique m'a donné un aperçu précieux de la programmation JavaScript dans un contexte réel de développement web.Le projet a duré entre 1 et 2 semaines, en fonction de mon engagement à temps plein dans ma formation. Les compétences acquises, notamment la maîtrise de JavaScript, sont essentielles pour ma future carrière dans le développement web."
+                }
+            }
+        ],
+        "url": "https://laurieanne-doré.github.io/PrintIt/",
+        "languages": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "infos": [
+            "Animations CSS"
+        ]
+    },
+    {
+        "title": "Ohmyfood",
+        "cover": "assets/images/ohmyfood.png",
+        "demo": "assets/videos/ohmyfooddemo.gif",
+        "description": [
+            {
+                "title": "Réservation de table",
+                "client": "Ohmyfood est une jeune entreprise innovante dans le secteur de la restauration.",
+                "details": {
+                    "Présentation": "OhMyFood est une startup de restauration qui souhaite développer un site répertoriant les menus de restaurants gastronomiques. Mon rôle en tant que développeuse était de créer le site en respectant les maquettes fournies par l'équipe UX designer.",
+                    "Objectifs": "Le projet a été conçu en adoptant une approche 'mobile first', ce qui signifie que j'ai priorisé l'optimisation de l'expérience utilisateur sur les appareils mobiles. Cette stratégie garantit que les utilisateurs bénéficient d'une expérience fluide et réactive, quel que soit l'appareil qu'ils utilisent, allant des smartphones aux ordinateurs de bureau. De plus, pour rendre le site encore plus attrayant, j'ai intégré des animations fluides et naturelles. Ces animations ont été soigneusement créées pour améliorer l'interactivité du site, offrant ainsi aux visiteurs une expérience engageante et immersive."
+                }
+            }
+        ],
+        "url": [
+            {
+                "Lien GitHub": "https://laurieanne-doré.github.io/Kasa/",
+                "Lien du site": "https://github.com/LaurieAnne-Doree/Kasa"
+            }
+        ],
+        "languages": [
+            "HTML",
+            "Sass"
+        ],
+        "infos": [
+            "Responsive design",
+            "Animations CSS"
+        ]
+    },
+    {
+        "title": "Booki",
+        "cover": "assets/images/booki.png",
+        "demo": "assets/videos/bookidemo.gif",
+        "description": [
+            {
+                "title": "Hébergements et activités",
+                "client": "Booki est une entreprise souhaitant créer un site web pour la recherche d'hébergements et d'activités.",
+                "details": {
+                    "Présentation": "Ce projet web qui vise à simplifier la recherche d'hébergements et d'activités dans la ville de choix de l'utilisateur. Mon rôle en tant que développeuse Front-End était de prendre les maquettes fournies par l'UI designer, et de les intégrer en utilisant HTML et CSS.",
+                    "Objectifs": "Le principal défi était de rendre le projet compatible avec diverses tailles d'écran tout en respectant les spécifications de conception. J'ai utilisé flexbox pour créer une mise en page adaptable, garantissant ainsi une expérience utilisateur uniforme sur tous les appareils. J'ai travaillé en étroite collaboration avec les concepteurs pour intégrer harmonieusement les éléments visuels dans la mise en page, assurant ainsi une présentation esthétique et fonctionnelle sur les écrans larges de bureau, les tablettes et les smartphones."
+                }
+            }
+        ],
+        "url": [
+            {
+                "Lien GitHub": "https://laurieanne-doré.github.io/Kasa/",
+                "Lien du site": "https://github.com/LaurieAnne-Doree/Kasa"
+            }
+        ],
+        "languages": [
+            "HTML",
+            "CSS"
+        ],
+        "infos": [
+            "Responsive design"
+        ]
+    }
+]
