@@ -31,8 +31,22 @@ skillsCtn();
 fetch('assets/projets.json')
     .then(response => response.json())
     .then(projets => {
-        console.log(projets);
         const projetContainer = document.querySelector(".projectsCtn");
+        let currentIndex = 0;
+
+        function showNextProject() {
+            if (currentIndex === projets.length - 1) {
+                currentIndex = 0;
+            } else {
+                currentIndex++;
+            }
+            projetContainer.scrollLeft = currentIndex * projetContainer.offsetWidth;
+        }
+
+        function showPreviousProject() {
+            projetContainer.scrollLeft -= projetContainer.offsetWidth;
+            currentIndex = (currentIndex - 1 + projets.length) % projets.length;
+        }
 
         for (const projet of projets) {
             const li = document.createElement("li");
@@ -47,30 +61,13 @@ fetch('assets/projets.json')
             const descriptionModal = projet.description;
             const projetTitle = projet.title;
 
-            li.id = projetTitle;
+            li.className = "project";
             coverImg.src = projet.cover;
 
             projectInfo.classList.add("projectInfo");
             infoIcon.classList.add("fa-solid", "fa-circle-plus");
             chevronLeft.classList.add("fa-solid", "fa-chevron-left");
             chevronRight.classList.add("fa-solid", "fa-chevron-right");
-
-
-            if (projet.languages) {
-                projet.languages.forEach(langage => {
-                    const langageP = document.createElement("p");
-                    langageP.textContent = ` ${langage}`;
-                    projectInfo.appendChild(langageP);
-                });
-            }
-
-            if (projet.infos) {
-                projet.infos.forEach(info => {
-                    const infoP = document.createElement("p");
-                    infoP.textContent = ` ${info}`;
-                    projectInfo.appendChild(infoP);
-                });
-            }
 
             li.appendChild(figure);
             li.appendChild(projectInfo);
@@ -82,14 +79,32 @@ fetch('assets/projets.json')
             projetContainer.appendChild(li);
 
             infoIcon.addEventListener('click', function () {
-                openModal(projetTitle, descriptionModal, projet.url, projet.infos, projet.languages, projet.demo,);
+                openModal(projetTitle, descriptionModal, projet.url, projet.infos, projet.languages, projet.demo);
             });
-
         }
+
+        const chevronLeft = document.querySelector(".fa-chevron-left");
+        const chevronRight = document.querySelector(".fa-chevron-right");
+
+        chevronLeft.addEventListener('click', function () {
+            showPreviousProject();
+        });
+
+        chevronRight.addEventListener('click', function () {
+            showNextProject();
+        });
+
+        projetContainer.addEventListener('scroll', function () {
+            if (projetContainer.scrollLeft % projetContainer.offsetWidth === 0) {
+                currentIndex = projetContainer.scrollLeft / projetContainer.offsetWidth;
+            }
+        });
     })
     .catch(error => {
         console.error('Une erreur s\'est produite lors du chargement du fichier JSON :', error);
     });
+
+
 
 function openModal(title, descriptions, urls, infos, languages, demo) {
     const modalCtn = document.querySelector(".main");

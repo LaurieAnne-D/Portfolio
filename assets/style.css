@@ -352,7 +352,9 @@ main {
     }
 }
 
-.projects {
+/* projects section */
+
+.projects-sctn {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -367,30 +369,30 @@ main {
         text-align: center;
     }
 
-    ul {
+    .projectsCtn {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
+        overflow-x: hidden;
+        list-style: none;
+        padding: 0;
+        margin: 0;
         width: 100%;
+        flex-wrap: nowrap;
 
-        li {
+        .project {
             display: flex;
             justify-content: center;
             align-items: center;
             width: 100%;
-            border-radius: 20px;
+            flex: 0 0 auto;
 
             figure {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                position: relative;
+                margin: 0;
 
                 img {
-                    border-radius: 20px;
                     width: 60%;
                 }
 
@@ -401,8 +403,13 @@ main {
                     position: absolute;
                     align-items: center;
                     width: 70%;
-                    font-size: 56px;
                     color: var(--secondary-color);
+
+                    .fa-solid {
+                        cursor: pointer;
+                        font-size: 24px;
+                        margin: 0 5px;
+                    }
                 }
             }
 
@@ -436,19 +443,9 @@ main {
                 }
             }
         }
-
-        li:hover .projectInfo p,
-        li:focus .projectInfo p {
-            display: block;
-        }
-
-        li:hover .fa-circle-plus,
-        li:focus .fa-circle-plus {
-            display: block;
-
-        }
     }
 }
+
 
 .modal {
     position: fixed;
