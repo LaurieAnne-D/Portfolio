@@ -38,7 +38,7 @@ body {
 }
 
 main {
-    width: calc(100% - 20px);
+    width: 100%;
 }
 
 
@@ -175,7 +175,7 @@ main {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 100%;
+        width: calc(100% - 20px);
         gap: 32px;
         text-align: center;
         padding-top: 40px;
@@ -239,6 +239,7 @@ main {
             background-color: var(--sixth-color);
             padding: 32px;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            display: none;
 
             h2 {
                 text-align: center;
@@ -255,9 +256,9 @@ main {
                 color: var(--third-color);
             }
 
-            h2:active + p,
-            h2:focus + p,
-            h2:hover + p {
+            h2:active+p,
+            h2:focus+p,
+            h2:hover+p {
                 display: block;
             }
 
@@ -272,6 +273,7 @@ main {
         width: calc(100% - 20px);
         max-width: 398px;
         text-align: center;
+        display: none;
 
 
         h2 {
@@ -356,6 +358,13 @@ main {
     justify-content: center;
     align-items: center;
     gap: 10px;
+    width: 100%;
+    background-color: var(--third-color);
+
+    h1 {
+        margin-top: 20px;
+        color: var(--secondary-color);
+    }
 
     ul {
         display: flex;
@@ -369,7 +378,7 @@ main {
             display: flex;
             justify-content: center;
             align-items: center;
-            width: calc(100% - 20px);
+            width: calc(100% - 56px);
             border-radius: 20px;
 
             img {
