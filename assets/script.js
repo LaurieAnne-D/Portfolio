@@ -36,7 +36,11 @@ fetch('assets/projets.json')
 
         for (const projet of projets) {
             const li = document.createElement("li");
+            const figure = document.createElement("figure");
+            const figcaption = document.createElement("figcaption");
             const coverImg = document.createElement("img");
+            const chevronLeft = document.createElement("i");
+            const chevronRight = document.createElement("i");
             const projectInfo = document.createElement("div");
             const infoIcon = document.createElement("i");
 
@@ -48,6 +52,8 @@ fetch('assets/projets.json')
 
             projectInfo.classList.add("projectInfo");
             infoIcon.classList.add("fa-solid", "fa-circle-plus");
+            chevronLeft.classList.add("fa-solid", "fa-chevron-left");
+            chevronRight.classList.add("fa-solid", "fa-chevron-right");
 
 
             if (projet.languages) {
@@ -66,8 +72,12 @@ fetch('assets/projets.json')
                 });
             }
 
-            li.appendChild(coverImg);
+            li.appendChild(figure);
             li.appendChild(projectInfo);
+            figure.appendChild(coverImg);
+            figure.appendChild(figcaption);
+            figcaption.appendChild(chevronLeft);
+            figcaption.appendChild(chevronRight);
             projectInfo.appendChild(infoIcon);
             projetContainer.appendChild(li);
 
