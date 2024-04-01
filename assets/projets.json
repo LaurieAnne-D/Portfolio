@@ -1,8 +1,9 @@
 [
     {
         "title": "Kasa",
+        "subtitle":"Développement d'une application web de location immobilière en utilisant React.",
         "cover": "assets/images/kasa.png",
-        "demo": "assets/videos/kasademo.gif",
+        "demo": "assets/images/kasa2.png",
         "description": [
             {
                 "title": "Location d'appartements",
@@ -32,8 +33,9 @@
     },
     {
         "title": "Qwenta",
+        "subtitle":"Élaboration de la stratégie de développement du site pour le client.",
         "cover": "assets/images/qwenta.png",
-        "demo": "assets/videos/kasademo.gif",
+        "demo": "assets/images/qwenta2.png",
         "description": [
             {
                 "title": "Menu Maker",
@@ -60,8 +62,9 @@
     },
     {
         "title": "Sophie Bluel",
+        "subtitle": "Dynamiser un portfolio en le rendant interactif grâce à JavaScript.",
         "cover": "assets/images/sophieb.png",
-        "demo": "assets/videos/sblueldemo.gif",
+        "demo": "assets/images/sophieb2.png",
         "description": [
             {
                 "title": "Portfolio",
@@ -90,8 +93,9 @@
     },
     {
         "title": "Print it",
+        "subtitle": "Rendre plus dynamique le site web statique en incorporant un carrousel interactif.",
         "cover": "assets/images/printit.png",
-        "demo": "assets/videos/printitdemo.gif",
+        "demo": "assets/images/printit2.png",
         "description": [
             {
                 "title": "Imprimerie",
@@ -114,8 +118,9 @@
     },
     {
         "title": "Ohmyfood",
+        "subtitle":"Optimisation de l'expérience utilisateur sur un site mobile en intégrant des animations CSS à son interface",
         "cover": "assets/images/ohmyfood.png",
-        "demo": "assets/videos/ohmyfooddemo.gif",
+        "demo": "assets/images/ohmyfood2.png",
         "description": [
             {
                 "title": "Réservation de table",
@@ -143,8 +148,9 @@
     },
     {
         "title": "Booki",
+        "subtitle": "Conception de la page principale du site d'une agence de voyage avec HTML & CSS",
         "cover": "assets/images/booki.png",
-        "demo": "assets/videos/bookidemo.gif",
+        "demo": "assets/images/booki2.png",
         "description": [
             {
                 "title": "Hébergements et activités",

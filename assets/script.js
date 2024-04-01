@@ -40,19 +40,39 @@ fetch('assets/projets.json')
                 const figure = document.createElement("figure");
                 const figcaption = document.createElement("figcaption");
                 const coverImg = document.createElement("img");
-                const h1 = document.createElement("h1");
+                const h2 = document.createElement("h2");
+                const p = document.createElement("p");
+                const pSee = document.createElement("p");
+
+                // Ajouter un identifiant unique à chaque projet
+                li.id = `project-${index}`;
 
                 li.className = "project";
                 if (index === currentIndex) {
                     li.classList.add("active");
                 }
                 coverImg.src = projet.cover;
-                h1.textContent = projet.title;
+                h2.textContent = projet.title;
+                p.textContent = projet.subtitle;
+                pSee.textContent = "Voir le projet";
+                pSee.classList.add("seeProject");
+
+                // Ajouter un gestionnaire d'événements pour ouvrir la modal
+                pSee.addEventListener('click', () => {
+                    if (projet.descriptions) {
+                        openModal(projet.title, projet.descriptions, projet.urls, projet.infos, projet.languages, projet.demo);
+                    } else {
+                        openModal(projet.title, [], projet.urls, projet.infos, projet.languages, projet.demo);
+                    }
+                });
+
 
                 figure.appendChild(coverImg);
-                figcaption.appendChild(h1);
+                figcaption.appendChild(h2);
+                figcaption.appendChild(p);
+                figcaption.appendChild(pSee);
                 li.appendChild(figure);
-                li.appendChild(figcaption);
+                figure.appendChild(figcaption);
                 projetContainer.appendChild(li);
             });
         }
