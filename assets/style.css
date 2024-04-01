@@ -391,7 +391,7 @@ main {
 
                 img {
                     border-radius: 20px;
-                    width: calc(100% - 80px);
+                    width: 60%;
                 }
 
                 figcaption {
@@ -400,8 +400,8 @@ main {
                     justify-content: space-between;
                     position: absolute;
                     align-items: center;
-                    width: calc(100% - 48px);
-                    font-size: 48px;
+                    width: 70%;
+                    font-size: 56px;
                     color: var(--secondary-color);
                 }
             }
