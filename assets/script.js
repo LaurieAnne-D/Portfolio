@@ -34,75 +34,67 @@ fetch('assets/projets.json')
         const projetContainer = document.querySelector(".projectsCtn");
         let currentIndex = 0;
 
-        function showNextProject() {
-            if (currentIndex === projets.length - 1) {
-                currentIndex = 0;
-            } else {
-                currentIndex++;
-            }
-            projetContainer.scrollLeft = currentIndex * projetContainer.offsetWidth;
-        }
+        function showProjects() {
+            projets.forEach((projet, index) => {
+                const li = document.createElement("li");
+                const figure = document.createElement("figure");
+                const figcaption = document.createElement("figcaption");
+                const coverImg = document.createElement("img");
+                const h1 = document.createElement("h1");
 
-        function showPreviousProject() {
-            projetContainer.scrollLeft -= projetContainer.offsetWidth;
-            currentIndex = (currentIndex - 1 + projets.length) % projets.length;
-        }
+                li.className = "project";
+                if (index === currentIndex) {
+                    li.classList.add("active");
+                }
+                coverImg.src = projet.cover;
+                h1.textContent = projet.title;
 
-        for (const projet of projets) {
-            const li = document.createElement("li");
-            const figure = document.createElement("figure");
-            const figcaption = document.createElement("figcaption");
-            const coverImg = document.createElement("img");
-            const chevronLeft = document.createElement("i");
-            const chevronRight = document.createElement("i");
-            const projectInfo = document.createElement("div");
-            const infoIcon = document.createElement("i");
-
-            const descriptionModal = projet.description;
-            const projetTitle = projet.title;
-
-            li.className = "project";
-            coverImg.src = projet.cover;
-
-            projectInfo.classList.add("projectInfo");
-            infoIcon.classList.add("fa-solid", "fa-circle-plus");
-            chevronLeft.classList.add("fa-solid", "fa-chevron-left");
-            chevronRight.classList.add("fa-solid", "fa-chevron-right");
-
-            li.appendChild(figure);
-            li.appendChild(projectInfo);
-            figure.appendChild(coverImg);
-            figure.appendChild(figcaption);
-            figcaption.appendChild(chevronLeft);
-            figcaption.appendChild(chevronRight);
-            projectInfo.appendChild(infoIcon);
-            projetContainer.appendChild(li);
-
-            infoIcon.addEventListener('click', function () {
-                openModal(projetTitle, descriptionModal, projet.url, projet.infos, projet.languages, projet.demo);
+                figure.appendChild(coverImg);
+                figcaption.appendChild(h1);
+                li.appendChild(figure);
+                li.appendChild(figcaption);
+                projetContainer.appendChild(li);
             });
         }
+
+        function showProject(index) {
+            const activeProject = document.querySelector(".project.active");
+            if (activeProject) {
+                activeProject.classList.remove("active");
+            }
+            const projectToShow = document.querySelectorAll(".project")[index];
+            projectToShow.classList.add("active");
+        }
+
+        function prevProject() {
+            currentIndex--;
+            if (currentIndex < 0) {
+                currentIndex = projets.length - 1;
+            }
+            showProject(currentIndex);
+        }
+
+        function nextProject() {
+            currentIndex++;
+            if (currentIndex >= projets.length) {
+                currentIndex = 0;
+            }
+            showProject(currentIndex);
+        }
+
+        // Initialisation
+        showProjects();
 
         const chevronLeft = document.querySelector(".fa-chevron-left");
         const chevronRight = document.querySelector(".fa-chevron-right");
 
-        chevronLeft.addEventListener('click', function () {
-            showPreviousProject();
-        });
-
-        chevronRight.addEventListener('click', function () {
-            showNextProject();
-        });
-
-        projetContainer.addEventListener('scroll', function () {
-            if (projetContainer.scrollLeft % projetContainer.offsetWidth === 0) {
-                currentIndex = projetContainer.scrollLeft / projetContainer.offsetWidth;
-            }
-        });
+        chevronLeft.addEventListener('click', prevProject);
+        chevronRight.addEventListener('click', nextProject);
     })
     .catch(error => {
         console.error('Une erreur s\'est produite lors du chargement du fichier JSON :', error);
     });
+
 
 
 
