@@ -42,6 +42,9 @@ fetch('assets/projets.json')
                 const p = document.createElement("p");
                 const pSee = document.createElement("p");
 
+                const descriptionModal = projet.description;
+                const projetTitle = projet.title;
+
                 // Ajouter un identifiant unique à chaque projet
                 li.id = `project-${index}`;
 
@@ -56,13 +59,10 @@ fetch('assets/projets.json')
                 pSee.classList.add("seeProject");
 
                 // Ajouter un gestionnaire d'événements pour ouvrir la modal
-                pSee.addEventListener('click', () => {
-                    if (projet.descriptions) {
-                        openModal(projet.title, projet.descriptions, projet.urls, projet.infos, projet.languages, projet.demo);
-                    } else {
-                        openModal(projet.title, [], projet.urls, projet.infos, projet.languages, projet.demo);
-                    }
+                pSee.addEventListener('click', function () {
+                    openModal(projetTitle, descriptionModal, projet.url, projet.infos, projet.languages, projet.demo,);
                 });
+
 
 
                 figure.appendChild(coverImg);
@@ -142,14 +142,14 @@ function openModal(title, descriptions, urls, infos, languages, demo) {
     displayDemo(modalContent, demo);
     displayDescriptions(modalContent, descriptions);
     displayURLs(modalContent, urls);
-    displayInfos(modalContent, infos);
-    displayLanguages(modalContent, languages);
+    displayInfosAndLanguages(modalContent, infos, languages);
 
     modalIcon.addEventListener('click', closeModal);
     wave.addEventListener('click', closeModal);
 
     document.body.classList.add('modal-open');
 }
+
 
 function displayDemo(container, demo) {
     if (!demo) return;
@@ -211,43 +211,76 @@ function displayDescriptions(container, descriptions) {
 
 function displayURLs(container, urls) {
     if (!urls) return;
-    const urlsTitle = document.createElement("h2");
-    urlsTitle.textContent = "URLs";
-    container.appendChild(urlsTitle);
+    const urlSctn = document.createElement("section");
+    const urlCtn = document.createElement("div");
+
+    urlSctn.classList.add("liens");
+    urlCtn.classList.add("urlCtn");
+
+    urlSctn.appendChild(urlCtn);
+    container.appendChild(urlSctn);
     urls.forEach(url => {
         const urlTitle = document.createElement("h3");
-        urlTitle.textContent = "Link";
-        container.appendChild(urlTitle);
+
+        urlTitle.textContent = "Liens";
+        urlSctn.appendChild(urlTitle);
         for (const [name, link] of Object.entries(url)) {
             const urlP = document.createElement("p");
+            const linkIcon = document.createElement("i");
+
+            linkIcon.classList.add("fa-solid", "fa-square-arrow-up-right");
             urlP.innerHTML = `<a href="${link}" target="_blank">${name}</a>`;
-            container.appendChild(urlP);
+            urlP.appendChild(linkIcon);
+            urlCtn.appendChild(urlP);
         }
     });
 }
 
-function displayInfos(container, infos) {
-    if (!infos) return;
-    const infosTitle = document.createElement("h2");
-    infosTitle.textContent = "Infos";
-    container.appendChild(infosTitle);
-    infos.forEach(info => {
-        const infoP = document.createElement("p");
-        infoP.textContent = info;
-        container.appendChild(infoP);
-    });
-}
+function displayInfosAndLanguages(container, infos, languages) {
+    if (!infos && !languages) return;
 
-function displayLanguages(container, languages) {
-    if (!languages) return;
-    const languagesTitle = document.createElement("h2");
-    languagesTitle.textContent = "Languages";
-    container.appendChild(languagesTitle);
-    languages.forEach(language => {
-        const languageP = document.createElement("p");
-        languageP.textContent = language;
-        container.appendChild(languageP);
-    });
+    const infosLanguagesSection = document.createElement("section");
+    const infosLanguagesCtn = document.createElement("div");
+    infosLanguagesSection.classList.add("infos-languages");
+
+    // Création du titre pour la section commune
+    const sectionTitle = document.createElement("h3");
+    sectionTitle.textContent = "Informations et Langages";
+    infosLanguagesSection.appendChild(sectionTitle);
+
+    // Affichage des informations, s'il y en a
+    if (infos && infos.length > 0) {
+        const infosCtn = document.createElement("section");
+        infosCtn.classList.add("infos");
+        const infosTitle = document.createElement("h3");
+        infosTitle.textContent = "Infos";
+        infosCtn.appendChild(infosTitle);
+        infos.forEach(info => {
+            const infoP = document.createElement("p");
+            infoP.textContent = info;
+            infosCtn.appendChild(infoP);
+        });
+        infosLanguagesCtn.appendChild(infosCtn);
+    }
+
+    // Affichage des langages, s'il y en a
+    if (languages && languages.length > 0) {
+        const languagesCtn = document.createElement("section");
+        languagesCtn.classList.add("languages");
+        const languagesTitle = document.createElement("h3");
+        languagesTitle.textContent = "Langages";
+        languagesCtn.appendChild(languagesTitle);
+        languages.forEach(language => {
+            const languageP = document.createElement("p");
+            languageP.textContent = language;
+            languagesCtn.appendChild(languageP);
+        });
+        infosLanguagesCtn.appendChild(languagesCtn);
+    }
+
+    // Ajout de la section commune au conteneur spécifié
+    infosLanguagesSection.appendChild(infosLanguagesCtn);
+    container.appendChild(infosLanguagesSection);
 }
 
 function closeModal() {

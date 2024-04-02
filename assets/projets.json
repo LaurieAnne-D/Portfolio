@@ -1,7 +1,7 @@
 [
     {
         "title": "Kasa",
-        "subtitle":"Développement d'une application web de location immobilière en utilisant React.",
+        "subtitle": "Développement d'une application web de location immobilière en utilisant React.",
         "cover": "assets/images/kasa.png",
         "demo": "assets/images/kasa2.png",
         "description": [
@@ -16,8 +16,8 @@
         ],
         "url": [
             {
-                "Lien GitHub": "https://laurieanne-doré.github.io/Kasa/",
-                "Lien du site": "https://github.com/LaurieAnne-Doree/Kasa"
+                "Le répertoire GitHub": "https://laurieanne-doré.github.io/Kasa/",
+                "Le site en ligne": "https://github.com/LaurieAnne-Doree/Kasa"
             }
         ],
         "languages": [
@@ -33,7 +33,7 @@
     },
     {
         "title": "Qwenta",
-        "subtitle":"Élaboration de la stratégie de développement du site pour le client.",
+        "subtitle": "Élaboration de la stratégie de développement du site pour le client.",
         "cover": "assets/images/qwenta.png",
         "demo": "assets/images/qwenta2.png",
         "description": [
@@ -106,7 +106,12 @@
                 }
             }
         ],
-        "url": "https://laurieanne-doré.github.io/PrintIt/",
+        "url": [
+            {
+                "Lien GitHub": "https://laurieanne-doré.github.io/Kasa/",
+                "Lien du site": "https://github.com/LaurieAnne-Doree/Kasa"
+            }
+        ],
         "languages": [
             "HTML",
             "CSS",
@@ -118,7 +123,7 @@
     },
     {
         "title": "Ohmyfood",
-        "subtitle":"Optimisation de l'expérience utilisateur sur un site mobile en intégrant des animations CSS à son interface",
+        "subtitle": "Optimisation de l'expérience utilisateur sur un site mobile en intégrant des animations CSS à son interface",
         "cover": "assets/images/ohmyfood.png",
         "demo": "assets/images/ohmyfood2.png",
         "description": [
