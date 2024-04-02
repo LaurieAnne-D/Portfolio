@@ -25,8 +25,6 @@ function skillsCtn() {
     skillsCtn.appendChild(clone);
 }
 
-skillsCtn();
-
 
 fetch('assets/projets.json')
     .then(response => response.json())
