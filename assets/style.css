@@ -306,6 +306,12 @@ main {
                         font-weight: 400;
                     }
                 }
+
+                .more {
+                    i {
+                        color: var(--eighth-color);
+                    }
+                }
             }
         }
     }
