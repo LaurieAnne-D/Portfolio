@@ -1,5 +1,28 @@
 [
     {
+        "Poste": "Developpeuse web",
+        "Entreprise": "OpenClassrooms",
+        "Date": "2023-2024",
+        "icon": "fa-solid fa-code",
+        "Expérience": [
+            {
+                "title": "Intégration web",
+                "description": [
+                    "Création de la page d'accueil pour une agence de voyage en utilisant HTML, CSS et le Responsive Web Design avec mise en page flexible grâce à Flexbox.",
+                    "Développement d'un site pour une plateforme de restaurant en adoptant une approche mobile first et en ajoutant des animations CSS pour optimiser l'expérience utilisateur. Les technologies utilisées : HTML, CSS, Responsive Web Design et animations CSS.",
+                    "Utilisation de JavaScript pour interagir avec une API et générer dynamiquement des éléments sur le site web d'une architecte d'intérieur. Les technologies impliquées : JavaScript, Node.js, JWT, Swagger et un tableau Kanban pour la gestion de projet.",
+                    "Intégration du front-end d'une application de location immobilière avec React, comprenant des fiches de logement dynamiques, un carrousel et des animations collapse. Les technologies utilisées : React, Node.js, SASS et Responsive Web Design."
+                ]
+            },
+            {
+                "title": "Gestion de projets",
+                "description": [
+                    "Gestion de projet pour le développement du site Menu Maker by Qwenta, incluant l'élaboration de la solution technique, la documentation des spécifications techniques, le découpage des fonctionnalités en tâches et le suivi du projet via des outils de gestion tels que Trello, Notion, Figma, Feedly et Canva."
+                ]
+            }
+        ]
+    },
+    {
         "Poste": "Customer Care et LiveOps Manager",
         "Entreprise": "deliver.ee",
         "Date": "2017-2021",
