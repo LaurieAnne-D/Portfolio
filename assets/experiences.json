@@ -73,5 +73,39 @@
                 "Élaboration de support de formation."
             ]
         }
-    }
+    },
+    {
+        "Poste": "Headhunter",
+        "Entreprise": "Myjob.company",
+        "Date": "2016",
+        "Expérience": {
+            "RH": [
+                "Chargé de Recrutement dans l’informatique et le E-marketing."
+            ]
+        }
+    },
+    {
+        "Poste": "Stages infirmiers",
+        "Entreprise": "IFSI",
+        "Date": "2013-2015",
+        "Expérience": {
+            "Soins": [
+                "Assurer les soins du rôle infirmier propre et prescrit."
+            ],
+            "Accompagement": [
+                "Établir plan de soin en collaboration avec infirmières et aides soignantes",
+                "Accueillir et proposer des ateliers aux patients."
+            ]
+        }
+    },
+        {
+            "Poste": "Animatrice Commerciale",
+            "Entreprise": "Centres commerciaux",
+            "Date": "2010-2012",
+            "Expérience": {
+                "Animation": [
+                    "Réalisée sur la promotion de produits alimentaires et de boissons en grande surface."
+                ]
+            }
+        }
 ]

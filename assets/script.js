@@ -299,3 +299,58 @@ function closeModal() {
     modal.classList.add("modalNone");
     document.body.classList.remove('modal-open');
 }
+
+
+// Fonction pour récupérer les données JSON
+async function fetchData() {
+    try {
+        const response = await fetch('assets/experiences.json');
+        if (!response.ok) {
+            throw new Error('La réponse du serveur n\'est pas valide. Code d\'erreur : ' + response.status);
+        }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Une erreur est survenue lors de la récupération des données :', error);
+    }
+}
+
+// Fonction pour afficher les données dans la section career
+async function displayData() {
+    const careerSection = document.querySelector('.career');
+    const experiences = await fetchData();
+
+    const experiencesCntn = document.createElement('div');
+
+    if (experiences) {
+        // Pour chaque poste d'expérience
+        experiences.forEach(experience => {
+            // Créer une nouvelle section
+            const section = document.createElement('section');
+
+            // Créer un titre h1 pour le poste
+            const title = document.createElement('h3');
+            title.textContent = experience.Poste;
+            section.appendChild(title);
+
+            // Créer un paragraphe pour l'entreprise
+            const company = document.createElement('p');
+            company.textContent = experience.Entreprise;
+            section.appendChild(company);
+
+            // Créer un paragraphe pour la date
+            const date = document.createElement('p');
+            date.textContent = experience.Date;
+            section.appendChild(date);
+
+            // Ajouter la section à la section career
+            experiencesCntn.appendChild(section);
+            careerSection.appendChild(experiencesCntn);
+        });
+    } else {
+        console.error('Aucune donnée d\'expérience récupérée.');
+    }
+}
+
+// Appeler la fonction pour afficher les données
+displayData();
