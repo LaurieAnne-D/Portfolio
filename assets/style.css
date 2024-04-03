@@ -514,25 +514,36 @@ main {
         flex-direction: column;
         align-items: center;
         gap: 10px;
-        padding: 0 32px 32px 32px;
         width: 100%;
+        padding-bottom: 32px;
         background-color: var(--secondary-light-color);
 
-        section {
+        div {
+            width: 100%;
             display: flex;
             flex-direction: column;
-            width: 60%;
-            padding: 12px;
-            border-radius: 12px;
-            background-color: var(--coral-light-color);
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
 
-            h3 {
-                font-size: 1rem;
-                text-align: left;
-            }
+            section {
+                display: flex;
+                flex-direction: column;
+                width: 60%;
+                padding: 12px;
+                border-radius: 12px;
+                background-color: var(--secondary-light-color);
+                box-shadow: 0px 10px 15px -7px var(--coral-color);
+                border: 1px Solid var(--secondary-color);
 
-            p {
-                font-size: 1rem;
+                h3 {
+                    font-size: 1rem;
+                    text-align: left;
+                }
+
+                p {
+                    font-size: 1rem;
+                }
             }
         }
     }
