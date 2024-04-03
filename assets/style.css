@@ -637,6 +637,10 @@ footer {
             }
         }
 
+        .modalMain {
+            margin-top: 20px;
+        }
+
         img {
             width: 100%;
         }
@@ -781,6 +785,10 @@ footer {
                     }
                 }
             }
+        }
+
+        .modalFooter {
+            margin-top: 24px;
         }
 
         .closeModalBottom {

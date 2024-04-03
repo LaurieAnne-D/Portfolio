@@ -3,109 +3,154 @@
         "Poste": "Customer Care et LiveOps Manager",
         "Entreprise": "deliver.ee",
         "Date": "2017-2021",
-        "Expérience": {
-            "Management": [
-                "Encadrement d’une équipe de 4 à 5 personnes",
-                "Mise en place de processus de Recrutement",
-                "Conception de programme de formation",
-                "Pilotage de la production et de la performance",
-                "Tutorat des alternants",
-                "Réunion d’équipe hebdomadaire et entretien individuel",
-                "Création d’une newsletter interne : actualité de l’entreprise et diffusion des process."
-            ],
-            "Service client et Sav": [
-                "Gestion et qualification des demandes commerciales par téléphone/mail/chat",
-                "Fidélisation et maintient de la relation avec les clients et les partenaires transporteurs",
-                "Gestions des comptes clients (création et modification de comptes)",
-                "Accompagnement client dans l’appropriation du système informatique mis a leur disposition",
-                "Participation active à l’amélioration de la satisfaction client",
-                "Traitement et suivi des litiges."
-            ],
-            "Operations": [
-                "Assignation des ordres de livraison aux partenaires transporteurs",
-                "Suivi des commandes et de leur acheminement dans le respect des conditions de délai et de qualité."
-            ],
-            "Tech": [
-                "Maitrise et participation au développement et à l’amélioration des outils internes.(Web App client, application livreur, plateforme interne…)",
-                "Test des nouvelles fonctionnalités des outils internes",
-                "Détection et analyse des dysfonctionnements techniques",
-                "Veille, recherche et test de nouveaux outils externes dans le but d’optimiser et automatiser les taches quotidiennes."
-            ],
-            "Process": [
-                "Mise en place et amélioration des process.",
-                "Automatiser les taches",
-                "Fluidifier les échanges",
-                "Simplifier la navigation sur les plateformes",
-                "Faciliter l’acces aux magasins",
-                "Limiter les litiges",
-                "Améliorer la qualité et le délai de livraison."
-            ],
-            "Data: QS": [
-                "Suivi de la qualité de service",
-                "Force de proposition stratégique pour améliorer la QS."
-            ],
-            "Facturation": [
-                "Gestion de la facturation des transporteurs et des clients, édition de factures et suivi des paiements lors de litiges."
-            ],
-            "Autre": [
-                "Participation au comité de direction.(Brainstorming, création de process, ressources humaines, divers...)",
-                "Organisation d’un calendrier de l’avent sur les réseaux sociaux en collaboration avec les clients partenaires",
-                "Organisation d'évènements conviviaux à destination des salariés de l'entreprise",
-                "Participation au séminaire annuel de l'entreprise."
-            ]
-        }
+        "Expérience": [
+            {
+                "title": "Management",
+                "description": [
+                    "Encadrement d’une équipe de 4 à 5 personnes",
+                    "Mise en place de processus de Recrutement",
+                    "Conception de programme de formation",
+                    "Pilotage de la production et de la performance",
+                    "Tutorat des alternants",
+                    "Réunion d’équipe hebdomadaire et entretien individuel",
+                    "Création d’une newsletter interne : actualité de l’entreprise et diffusion des process."
+                ]
+            },
+            {
+                "title": "Service client et Sav",
+                "description": [
+                    "Gestion et qualification des demandes commerciales par téléphone/mail/chat",
+                    "Fidélisation et maintient de la relation avec les clients et les partenaires transporteurs",
+                    "Gestions des comptes clients (création et modification de comptes)",
+                    "Accompagnement client dans l’appropriation du système informatique mis a leur disposition",
+                    "Participation active à l’amélioration de la satisfaction client",
+                    "Traitement et suivi des litiges."
+                ]
+            },
+            {
+                "title": "Operations",
+                "description": [
+                    "Assignation des ordres de livraison aux partenaires transporteurs",
+                    "Suivi des commandes et de leur acheminement dans le respect des conditions de délai et de qualité."
+                ]
+            },
+            {
+                "title": "Tech",
+                "description": [
+                    "Maitrise et participation au développement et à l’amélioration des outils internes.(Web App client, application livreur, plateforme interne…)",
+                    "Test des nouvelles fonctionnalités des outils internes",
+                    "Détection et analyse des dysfonctionnements techniques",
+                    "Veille, recherche et test de nouveaux outils externes dans le but d’optimiser et automatiser les taches quotidiennes."
+                ]
+            },
+            {
+                "title": "Process",
+                "description": [
+                    "Mise en place et amélioration des process.",
+                    "Automatiser les taches",
+                    "Fluidifier les échanges",
+                    "Simplifier la navigation sur les plateformes",
+                    "Faciliter l’acces aux magasins",
+                    "Limiter les litiges",
+                    "Améliorer la qualité et le délai de livraison."
+                ]
+            },
+            {
+                "title": "Data: QS",
+                "description": [
+                    "Suivi de la qualité de service",
+                    "Force de proposition stratégique pour améliorer la QS."
+                ]
+            },
+            {
+                "title": "Facturation",
+                "description": [
+                    "Gestion de la facturation des transporteurs et des clients, édition de factures et suivi des paiements lors de litiges."
+                ]
+            },
+            {
+                "title": "Autre",
+                "description": [
+                    "Participation au comité de direction.(Brainstorming, création de process, ressources humaines, divers...)",
+                    "Organisation d’un calendrier de l’avent sur les réseaux sociaux en collaboration avec les clients partenaires",
+                    "Organisation d'évènements conviviaux à destination des salariés de l'entreprise",
+                    "Participation au séminaire annuel de l'entreprise."
+                ]
+            }
+        ]
     },
     {
         "Poste": "Agent LiveOps et service client",
         "Entreprise": "deliveroo",
         "Date": "2016",
-        "Expérience": {
-            "Service client et Sav": [
-                "Réceptionner et gérer les appels entrants des clients",
-                "Échanger avec les clients et l’ensemble du service par chat."
-            ],
-            "Opérations": [
-                "Réceptionner et gérer les appels entrants des bikers",
-                "Suivi de commandes Corporate et VIP",
-                "Assurer le bon déroulement des opérations Marketing."
-            ],
-            "Formation": [
-                "Élaboration de support de formation."
-            ]
-        }
+        "Expérience": [
+            {
+                "title": "Service client et Sav",
+                "description": [
+                    "Réceptionner et gérer les appels entrants des clients",
+                    "Échanger avec les clients et l’ensemble du service par chat."
+                ]
+            },
+            {
+                "title": "Opérations",
+                "description": [
+                    "Réceptionner et gérer les appels entrants des bikers",
+                    "Suivi de commandes Corporate et VIP",
+                    "Assurer le bon déroulement des opérations Marketing."
+                ]
+            },
+            {
+                "title": "Formation",
+                "description": [
+                    "Élaboration de support de formation."
+                ]
+            }
+        ]
     },
     {
         "Poste": "Headhunter",
         "Entreprise": "Myjob.company",
         "Date": "2016",
-        "Expérience": {
-            "RH": [
-                "Chargé de Recrutement dans l’informatique et le E-marketing."
-            ]
-        }
+        "Expérience": [
+            {
+                "title": "RH",
+                "description": [
+                    "Chargé de Recrutement dans l’informatique et le E-marketing."
+                ]
+            }
+        ]
     },
     {
         "Poste": "Stages infirmiers",
         "Entreprise": "IFSI",
         "Date": "2013-2015",
-        "Expérience": {
-            "Soins": [
-                "Assurer les soins du rôle infirmier propre et prescrit."
-            ],
-            "Accompagement": [
-                "Établir plan de soin en collaboration avec infirmières et aides soignantes",
-                "Accueillir et proposer des ateliers aux patients."
-            ]
-        }
+        "Expérience": [
+            {
+                "title": "Soins",
+                "description": [
+                    "Assurer les soins du rôle infirmier propre et prescrit."
+                ]
+            },
+            {
+                "title": "Accompagnement",
+                "description": [
+                    "Établir plan de soin en collaboration avec infirmières et aides soignantes",
+                    "Accueillir et proposer des ateliers aux patients."
+                ]
+            }
+        ]
     },
-        {
-            "Poste": "Animatrice Commerciale",
-            "Entreprise": "Centres commerciaux",
-            "Date": "2010-2012",
-            "Expérience": {
-                "Animation": [
+    {
+        "Poste": "Animatrice Commerciale",
+        "Entreprise": "Centres commerciaux",
+        "Date": "2010-2012",
+        "Expérience": [
+            {
+                "title": "Animation",
+                "description": [
                     "Réalisée sur la promotion de produits alimentaires et de boissons en grande surface."
                 ]
             }
-        }
+        ]
+    }
 ]

@@ -122,38 +122,47 @@ function openModal(title, descriptions, urls, infos, languages, demo) {
     const modalContent = document.createElement("section");
     const modalHeader = document.createElement("header");
     const modalTitle = document.createElement("h1");
-    const modalIcon = document.createElement("i");
+    const modalCloseIcon = document.createElement("i");
     const wave = document.querySelector(".fa-water");
+    const modalMain = document.createElement("main");
+    const modalFooter = document.createElement("footer");
     const closeModalBottom = document.createElement("p");
     const closeModalBttmIcon = document.createElement("i");
 
     modalTitle.textContent = title;
     closeModalBottom.textContent = "Fermer";
-    closeModalBttmIcon.classList.add("fa-solid", "fa-square-xmark");
+    
+    
 
     modal.classList.add("modal");
     modal.classList.remove("modalNone");
     modalContent.classList.add("modalContent");
     modalHeader.classList.add("modalHeader");
-    modalIcon.classList.add("fa-solid", "fa-xmark");
+    modalMain.classList.add("modalMain");
+    modalFooter.classList.add("modalFooter");
+    modalCloseIcon.classList.add("fa-solid", "fa-xmark");
+    closeModalBttmIcon.classList.add("fa-solid", "fa-square-xmark");
     closeModalBottom.classList.add("closeModalBottom");
 
 
     modalCtn.insertBefore(modal, modalCtn.firstChild);
     modal.appendChild(modalContent);
     modalContent.appendChild(modalHeader);
+    modalContent.appendChild(modalMain);
+    modalContent.appendChild(modalFooter);
     modalHeader.appendChild(modalTitle);
-    modalHeader.appendChild(modalIcon);
+    modalHeader.appendChild(modalCloseIcon);
+    modalFooter.appendChild(closeModalBottom);
     closeModalBottom.appendChild(closeModalBttmIcon);
 
-    displayDemo(modalContent, demo);
-    displayDescriptions(modalContent, descriptions);
-    displayURLs(modalContent, urls);
-    displayInfosAndLanguages(modalContent, infos, languages);
+    displayDemo(modalMain, demo);
+    displayDescriptions(modalMain, descriptions);
+    displayURLs(modalMain, urls);
+    displayInfosAndLanguages(modalMain, infos, languages);
 
-    modalContent.appendChild(closeModalBottom);
+    modalContent.appendChild(modalFooter);
 
-    modalIcon.addEventListener('click', closeModal);
+    modalCloseIcon.addEventListener('click', closeModal);
     wave.addEventListener('click', closeModal);
     closeModalBottom.addEventListener('click', closeModal);
 
@@ -346,11 +355,47 @@ async function displayData() {
             // Ajouter la section à la section career
             experiencesCntn.appendChild(section);
             careerSection.appendChild(experiencesCntn);
+
+            // Ajouter un gestionnaire d'événements pour ouvrir la modale
+            section.addEventListener('click', function () {
+                openModal(experience.Poste, experience.Date);
+                displayExperienceDetails(experience)
+                const modalContent = document.querySelector('.modalContent');
+                modalContent.classList.add("modalContentCareer");
+
+            })
         });
     } else {
         console.error('Aucune donnée d\'expérience récupérée.');
     }
 }
 
+// Fonction pour afficher les détails de l'expérience dans la modal
+function displayExperienceDetails(experience) {
+    const modalMain = document.querySelector('.modalMain');
+
+    // Créer un nouvel élément div pour les détails de l'expérience
+    const experienceDetails = document.createElement('div');
+    experienceDetails.innerHTML = `
+        <p>Entreprise : ${experience.Entreprise}</p>
+        <p>Date : ${experience.Date}</p>
+        <h3>Expérience :</h3>
+        <ul>
+            ${experience.Expérience.map(exp => `
+                <li>
+                    <h4>${exp.title}</h4>
+                    <ul>
+                        ${exp.description.map(item => `<li>${item}</li>`).join('')}
+                    </ul>
+                </li>
+            `).join('')}
+        </ul>
+    `;
+    modalMain.appendChild(experienceDetails);
+}
+
+
+
 // Appeler la fonction pour afficher les données
 displayData();
+
