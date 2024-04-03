@@ -386,11 +386,11 @@ function displayExperienceDetails(experience) {
         <p>Entreprise : ${experience.Entreprise}</p>
         <p>Date : ${experience.Date}</p>
         <h3>Expérience :</h3>
-        <ul>
+        <ul class="expCtn">
             ${experience.Expérience.map(exp => `
-                <li>
+                <li class="exp">
                     <h4>${exp.title}</h4>
-                    <ul>
+                    <ul class="expDetails">
                         ${exp.description.map(item => `<li>${item}</li>`).join('')}
                     </ul>
                 </li>
