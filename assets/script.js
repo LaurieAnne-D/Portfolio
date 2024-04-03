@@ -342,18 +342,25 @@ async function displayData() {
         experiences.forEach(experience => {
 
             const section = document.createElement('section');
+            const header = document.createElement('div');
+
+            section.appendChild(header);
 
             const title = document.createElement('h3');
             title.textContent = experience.Poste;
-            section.appendChild(title);
+            header.appendChild(title);
 
-            const company = document.createElement('p');
-            company.textContent = experience.Entreprise;
-            section.appendChild(company);
+            const careerIcon = document.createElement('i');
+            careerIcon.classList = experience.icon;
+            header.appendChild(careerIcon);
 
             const date = document.createElement('p');
             date.textContent = experience.Date;
             section.appendChild(date);
+
+            const company = document.createElement('p');
+            company.textContent = experience.Entreprise;
+            section.appendChild(company);
 
             experiencesCntn.appendChild(section);
             careerSection.appendChild(experiencesCntn);

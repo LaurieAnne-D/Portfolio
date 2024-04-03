@@ -3,6 +3,7 @@
         "Poste": "Customer Care et LiveOps Manager",
         "Entreprise": "deliver.ee",
         "Date": "2017-2021",
+        "icon" : "fa-solid fa-handshake-angle",
         "Expérience": [
             {
                 "title": "Management",
@@ -83,6 +84,7 @@
         "Poste": "Agent LiveOps et service client",
         "Entreprise": "deliveroo",
         "Date": "2016",
+        "icon": "fa-solid fa-headset",
         "Expérience": [
             {
                 "title": "Service client et Sav",
@@ -111,6 +113,7 @@
         "Poste": "Headhunter",
         "Entreprise": "Myjob.company",
         "Date": "2016",
+        "icon": "fa-solid fa-user-secret",
         "Expérience": [
             {
                 "title": "RH",
@@ -122,8 +125,9 @@
     },
     {
         "Poste": "Stages infirmiers",
-        "Entreprise": "IFSI",
+        "Entreprise": "Institut de formation en soins infirmiers",
         "Date": "2013-2015",
+        "icon": "fa-solid fa-hand-holding-medical",
         "Expérience": [
             {
                 "title": "Soins",
@@ -144,6 +148,7 @@
         "Poste": "Animatrice Commerciale",
         "Entreprise": "Centres commerciaux",
         "Date": "2010-2012",
+        "icon": "fa-solid fa-basket-shopping",
         "Expérience": [
             {
                 "title": "Animation",

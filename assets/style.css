@@ -539,7 +539,6 @@ main {
 
                 h3 {
                     font-size: 1rem;
-                    text-align: left;
                 }
 
                 p {
@@ -622,11 +621,8 @@ footer {
     align-items: center;
     z-index: 999;
     overflow-y: auto;
-    /* Autres styles */
     opacity: 0;
-    /* Définissez l'opacité initiale à 0 */
     transition: opacity 0.3s ease;
-    /* Ajoutez une transition pour l'opacité */
 
     .modalContent {
         width: 100%;
@@ -822,13 +818,18 @@ footer {
     }
 }
 
+.modalContentCareer {
+    display: flex;
+    flex-direction: column;
+
+}
+
 body.modal-open {
     overflow: hidden;
 }
 
 .modal.open {
     opacity: 1;
-    /* Changez l'opacité à 1 pour afficher la modal */
 }
 
 
