@@ -45,7 +45,7 @@ fetch('assets/projets.json')
                 const descriptionModal = projet.description;
                 const projetTitle = projet.title;
 
-                // Ajouter un identifiant unique à chaque projet
+               
                 li.id = `project-${index}`;
 
                 li.className = "project";
@@ -58,7 +58,7 @@ fetch('assets/projets.json')
                 pSee.textContent = "Voir le projet";
                 pSee.classList.add("seeProject");
 
-                // Ajouter un gestionnaire d'événements pour ouvrir la modal
+
                 pSee.addEventListener('click', function () {
                     openModal(projetTitle, descriptionModal, projet.url, projet.infos, projet.languages, projet.demo,);
                 });
@@ -100,7 +100,7 @@ fetch('assets/projets.json')
             showProject(currentIndex);
         }
 
-        // Initialisation
+
         showProjects();
 
         const chevronLeft = document.querySelector(".fa-chevron-left");
@@ -167,6 +167,11 @@ function openModal(title, descriptions, urls, infos, languages, demo) {
     closeModalBottom.addEventListener('click', closeModal);
 
     document.body.classList.add('modal-open');
+
+   
+    setTimeout(() => {
+        modal.classList.add('open');
+    }, 100); 
 }
 
 
@@ -262,12 +267,12 @@ function displayInfosAndLanguages(container, infos, languages) {
     const infosLanguagesCtn = document.createElement("div");
     infosLanguagesSection.classList.add("infos-languages");
 
-    // Création du titre pour la section commune
+
     const sectionTitle = document.createElement("h3");
     sectionTitle.textContent = "Informations et Langages";
     infosLanguagesSection.appendChild(sectionTitle);
 
-    // Affichage des informations, s'il y en a
+
     if (infos && infos.length > 0) {
         const infosCtn = document.createElement("section");
         infosCtn.classList.add("infos");
@@ -282,7 +287,7 @@ function displayInfosAndLanguages(container, infos, languages) {
         infosLanguagesCtn.appendChild(infosCtn);
     }
 
-    // Affichage des langages, s'il y en a
+
     if (languages && languages.length > 0) {
         const languagesCtn = document.createElement("section");
         languagesCtn.classList.add("languages");
@@ -297,20 +302,22 @@ function displayInfosAndLanguages(container, infos, languages) {
         infosLanguagesCtn.appendChild(languagesCtn);
     }
 
-    // Ajout de la section commune au conteneur spécifié
+
     infosLanguagesSection.appendChild(infosLanguagesCtn);
     container.appendChild(infosLanguagesSection);
 }
 
 function closeModal() {
     const modal = document.querySelector(".modal");
-    modal.classList.remove("modal");
-    modal.classList.add("modalNone");
+    modal.classList.remove("open"); 
     document.body.classList.remove('modal-open');
+    setTimeout(() => {
+        modal.remove();
+    }, 300); 
 }
 
 
-// Fonction pour récupérer les données JSON
+
 async function fetchData() {
     try {
         const response = await fetch('assets/experiences.json');
@@ -324,7 +331,7 @@ async function fetchData() {
     }
 }
 
-// Fonction pour afficher les données dans la section career
+
 async function displayData() {
     const careerSection = document.querySelector('.career');
     const experiences = await fetchData();
@@ -332,31 +339,25 @@ async function displayData() {
     const experiencesCntn = document.createElement('div');
 
     if (experiences) {
-        // Pour chaque poste d'expérience
         experiences.forEach(experience => {
-            // Créer une nouvelle section
+
             const section = document.createElement('section');
 
-            // Créer un titre h1 pour le poste
             const title = document.createElement('h3');
             title.textContent = experience.Poste;
             section.appendChild(title);
 
-            // Créer un paragraphe pour l'entreprise
             const company = document.createElement('p');
             company.textContent = experience.Entreprise;
             section.appendChild(company);
 
-            // Créer un paragraphe pour la date
             const date = document.createElement('p');
             date.textContent = experience.Date;
             section.appendChild(date);
 
-            // Ajouter la section à la section career
             experiencesCntn.appendChild(section);
             careerSection.appendChild(experiencesCntn);
 
-            // Ajouter un gestionnaire d'événements pour ouvrir la modale
             section.addEventListener('click', function () {
                 openModal(experience.Poste, experience.Date);
                 displayExperienceDetails(experience)
@@ -370,11 +371,9 @@ async function displayData() {
     }
 }
 
-// Fonction pour afficher les détails de l'expérience dans la modal
 function displayExperienceDetails(experience) {
     const modalMain = document.querySelector('.modalMain');
 
-    // Créer un nouvel élément div pour les détails de l'expérience
     const experienceDetails = document.createElement('div');
     experienceDetails.innerHTML = `
         <p>Entreprise : ${experience.Entreprise}</p>
@@ -395,7 +394,5 @@ function displayExperienceDetails(experience) {
 }
 
 
-
-// Appeler la fonction pour afficher les données
 displayData();
 

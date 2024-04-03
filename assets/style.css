@@ -553,7 +553,7 @@ main {
         section:active {
             box-shadow: 8px 10px 15px -1px var(--coral-color);
             transform: scale(1.1);
-            
+
         }
     }
 
@@ -622,6 +622,11 @@ footer {
     align-items: center;
     z-index: 999;
     overflow-y: auto;
+    /* Autres styles */
+    opacity: 0;
+    /* Définissez l'opacité initiale à 0 */
+    transition: opacity 0.3s ease;
+    /* Ajoutez une transition pour l'opacité */
 
     .modalContent {
         width: 100%;
@@ -821,9 +826,9 @@ body.modal-open {
     overflow: hidden;
 }
 
-
-.modalNone {
-    display: none;
+.modal.open {
+    opacity: 1;
+    /* Changez l'opacité à 1 pour afficher la modal */
 }
 
 
