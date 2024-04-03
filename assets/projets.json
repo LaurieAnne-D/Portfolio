@@ -21,8 +21,8 @@
             }
         ],
         "languages": [
-            "HTML",
-            "CSS",
+            "HTML5",
+            "CSS3",
             "JavaScript"
         ],
         "infos": [
@@ -82,8 +82,8 @@
             }
         ],
         "languages": [
-            "HTML",
-            "CSS",
+            "HTML5",
+            "CSS3",
             "JavaScript"
         ],
         "infos": [
@@ -113,8 +113,8 @@
             }
         ],
         "languages": [
-            "HTML",
-            "CSS",
+            "HTML5",
+            "CSS3",
             "JavaScript"
         ],
         "infos": [
@@ -143,7 +143,7 @@
             }
         ],
         "languages": [
-            "HTML",
+            "HTML5",
             "Sass"
         ],
         "infos": [
@@ -173,8 +173,8 @@
             }
         ],
         "languages": [
-            "HTML",
-            "CSS"
+            "HTML5",
+            "CSS3"
         ],
         "infos": [
             "Responsive design"

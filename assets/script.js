@@ -124,28 +124,38 @@ function openModal(title, descriptions, urls, infos, languages, demo) {
     const modalTitle = document.createElement("h1");
     const modalIcon = document.createElement("i");
     const wave = document.querySelector(".fa-water");
+    const closeModalBottom = document.createElement("p");
+    const closeModalBttmIcon = document.createElement("i");
 
     modalTitle.textContent = title;
+    closeModalBottom.textContent = "Fermer";
+    closeModalBttmIcon.classList.add("fa-solid", "fa-square-xmark");
 
     modal.classList.add("modal");
     modal.classList.remove("modalNone");
     modalContent.classList.add("modalContent");
     modalHeader.classList.add("modalHeader");
     modalIcon.classList.add("fa-solid", "fa-xmark");
+    closeModalBottom.classList.add("closeModalBottom");
+
 
     modalCtn.insertBefore(modal, modalCtn.firstChild);
     modal.appendChild(modalContent);
     modalContent.appendChild(modalHeader);
     modalHeader.appendChild(modalTitle);
     modalHeader.appendChild(modalIcon);
+    closeModalBottom.appendChild(closeModalBttmIcon);
 
     displayDemo(modalContent, demo);
     displayDescriptions(modalContent, descriptions);
     displayURLs(modalContent, urls);
     displayInfosAndLanguages(modalContent, infos, languages);
 
+    modalContent.appendChild(closeModalBottom);
+
     modalIcon.addEventListener('click', closeModal);
     wave.addEventListener('click', closeModal);
+    closeModalBottom.addEventListener('click', closeModal);
 
     document.body.classList.add('modal-open');
 }
