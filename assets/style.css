@@ -524,7 +524,7 @@ main {
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap: 12px;
+            gap: 14px;
 
             section {
                 display: flex;
@@ -532,9 +532,10 @@ main {
                 width: 60%;
                 padding: 12px;
                 border-radius: 12px;
-                background-color: var(--secondary-light-color);
-                box-shadow: 0px 10px 15px -7px var(--coral-color);
-                border: 1px Solid var(--secondary-color);
+                background-color: var(--secondary-color);
+                box-shadow: 8px 10px 9px -9px #f0743e;
+                border: 1px Solid var(--primary-color);
+                transition: all 0.3s ease-in-out;
 
                 h3 {
                     font-size: 1rem;
@@ -545,6 +546,14 @@ main {
                     font-size: 1rem;
                 }
             }
+        }
+
+        section:hover,
+        section:focus,
+        section:active {
+            box-shadow: 8px 10px 15px -1px var(--coral-color);
+            transform: scale(1.1);
+            
         }
     }
 
