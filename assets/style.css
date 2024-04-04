@@ -737,6 +737,7 @@ footer {
         gap: 50px;
         list-style: none;
         font-size: 1.7rem;
+        color: var(--primary-color);
     }
 }
 
