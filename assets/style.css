@@ -720,6 +720,7 @@ footer {
     align-items: center;
     width: 100%;
     gap: 5px;
+    padding-top: 32px;
     padding-bottom: 10px;
     border-top: #f1eaea 1px solid;
 
@@ -738,6 +739,12 @@ footer {
         list-style: none;
         font-size: 1.7rem;
         color: var(--primary-color);
+
+        li {
+            i{
+                color: var(--primary-color);
+            }
+        }
     }
 }
 
