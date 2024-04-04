@@ -304,7 +304,7 @@ main {
                         align-items: center;
 
                         img {
-                            width: 70%;
+                            width: 65%;
                         }
 
                         figcaption {
@@ -514,6 +514,10 @@ main {
             flex-direction: column;
             width: calc(100% - 24px);
             gap: 12px;
+
+            p {
+                padding: 4px
+            };
         }
 
     }
