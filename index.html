@@ -116,19 +116,20 @@
                 </li>
             </ul>
 
-            <p>Manager de l’équipe LiveOps et service client au sein d'une start-up tech spécialisée dans la
+            <p class="about-desc">Manager de l’équipe LiveOps et service client au sein d'une start-up tech spécialisée
+                dans la
                 livraison, j'ai ressenti le désir d'élargir mes compétences dans un autre domaine. <br>
                 C'est en collaborant étroitement avec l’équipe de développeurs, que je me suis découvert ma passion
                 pour ce métier.
             </p>
 
-            <p>
+            <p class="about-desc">
                 J'ai débuté mon parcours dans le développement en tant qu'autodidacte, avant d'accroitre mes
                 compétences lors d'une
                 formation d'intégrateur web chez OpenClassrooms.
             </p>
 
-            <p>
+            <p class="about-desc">
                 Toujours prête pour de nouveaux projets et collaborations créatives. Consultez mon
                 portfolio et contactez-moi pour discuter !
             </p>
@@ -139,7 +140,46 @@
         </section>
 
         <section id="contact" class="contact">
-            <a class="button" href="mailto:lau.dore@gmail.com">Me contacter</a>
+            <h1><span>Contactez-moi</span> <br> Parlez-moi de votre projet</h1>
+
+            <div class="contact-cards">
+                <figure>
+                    <i class="fa-regular fa-envelope"></i>
+                    <figcaption>
+                        <h3>Par mail</h3>
+                        <div class="linkCtn">
+                            <a class="link" href="mailto:lau.dore@gmail.com">Envoyez-moi un email</a>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <figcaption>
+                        <h3>Par WhatsApp</h3>
+                        <div class="linkCtn">
+                            <a class="link" href="https://wa.me/596696291979">Ou envoyez-moi un message</a>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </figcaption>
+                </figure>
+            </div>
+            <form action="#" method="post">
+                <input type="text" id="fname" name="firstname" placeholder="Votre nom.." required>
+                <input type="text" id="lname" name="lastname" placeholder="Votre prénom.." required>
+                <input type="text" id="email" name="email" placeholder="Votre email.." required>
+                <select id="project-type" name="project-type">
+                    <option value="Site Web">Site Web</option>
+                    <option value="Application Mobile">Application Mobile</option>
+                    <option value="Design Graphique">Design Graphique</option>
+                    <option value="Autre">Autre</option>
+                </select>
+                <input type="text" id="budget" name="budget" placeholder="Votre budget.." required>
+                <textarea id="subject" name="subject" placeholder="Ecrivez votre message.." style="height:200px"
+                    required></textarea>
+                <input type="submit" value="Envoyer">
+            </form>
+
         </section>
     </main>
 
