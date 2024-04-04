@@ -251,7 +251,7 @@ main {
             position: fixed;
             bottom: 12px;
             gap: 5px;
-            border-radius: 12px;
+            border-radius: 20px;
             width: calc(100% - 48px);
             padding: 12px;
             background-color: rgba(255, 225, 214, 0.5);
