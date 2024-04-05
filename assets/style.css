@@ -58,6 +58,21 @@
     }
 }
 
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+        /* Faites monter l'icône de 5 pixels */
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
 /* générale */
 body {
     display: flex;
@@ -149,7 +164,6 @@ ul {
     animation: changeBackground 20s infinite;
     z-index: 1001;
 
-
     .navi {
         display: flex;
         justify-content: end;
@@ -161,6 +175,7 @@ ul {
         text-align: start;
         position: fixed;
         z-index: 1001;
+
     }
 
     .navlinks-ctn {
@@ -211,6 +226,11 @@ ul {
         a {
             display: block;
             color: var(--coral-bright-color);
+            font-size: 2.5rem;
+
+            .fa-chevron-down {
+                animation: moveUpDown 1s infinite alternate;
+            }
         }
     }
 }
