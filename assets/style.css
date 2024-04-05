@@ -1233,7 +1233,7 @@ body.modal-open {
         .modal {
             .modalContent {
                 width: 70%;
-                border-left: var(--secondary-color) 1px solid;
+                border-left: var(--secondary-dark-color) 1px solid;
             }
         }
     }
