@@ -45,7 +45,6 @@ fetch('assets/projets.json')
                 const descriptionModal = projet.description;
                 const projetTitle = projet.title;
 
-               
                 li.id = `project-${index}`;
 
                 li.className = "project";
@@ -131,8 +130,8 @@ function openModal(title, descriptions, urls, infos, languages, demo) {
 
     modalTitle.textContent = title;
     closeModalBottom.textContent = "Fermer";
-    
-    
+
+
 
     modal.classList.add("modal");
     modal.classList.remove("modalNone");
@@ -168,10 +167,9 @@ function openModal(title, descriptions, urls, infos, languages, demo) {
 
     document.body.classList.add('modal-open');
 
-   
     setTimeout(() => {
         modal.classList.add('open');
-    }, 100); 
+    }, 100);
 }
 
 
@@ -230,7 +228,6 @@ function displayDescriptions(container, descriptions) {
         }
     }
 }
-
 
 
 function displayURLs(container, urls) {
@@ -309,11 +306,11 @@ function displayInfosAndLanguages(container, infos, languages) {
 
 function closeModal() {
     const modal = document.querySelector(".modal");
-    modal.classList.remove("open"); 
+    modal.classList.remove("open");
     document.body.classList.remove('modal-open');
     setTimeout(() => {
         modal.remove();
-    }, 300); 
+    }, 300);
 }
 
 
@@ -402,4 +399,81 @@ function displayExperienceDetails(experience) {
 
 
 displayData();
+
+//Animations 
+
+// Défilement progressif
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            window.scrollTo({
+                top: target.offsetTop,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// Affichage progressif des sections du main
+document.addEventListener("DOMContentLoaded", function () {
+    window.addEventListener("scroll", revealElements);
+});
+
+function revealElements() {
+    const elements = document.querySelectorAll('.main section, .main header');
+    elements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        if (elementTop < windowHeight / 1.2) { // Changez ce nombre pour ajuster le point où les éléments apparaissent
+            element.style.opacity = 1;
+        }
+    });
+}
+
+//Affichage progressif des skills
+document.addEventListener("DOMContentLoaded", function () {
+    window.addEventListener("scroll", revealListItems);
+});
+
+function revealListItems() {
+    const section = document.querySelector('.skills-ctn');
+    const listItems = document.querySelectorAll('.skills-ctn .iconsCtn li');
+    const rect = section.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+    const fiftyPercentHeight = rect.height * 0.5; // 50% de la hauteur de la section
+
+    // Vérifiez si le haut de la section est à 50% de sa hauteur dans la fenêtre
+    if (rect.top <= windowHeight - fiftyPercentHeight) {
+        listItems.forEach((item, index) => {
+            item.style.transition = `opacity 0.5s ease ${index * 0.2}s`; // Délai croissant de 0.2s entre chaque élément
+            item.style.opacity = 1;
+        });
+    }
+}
+
+// Affichage des icons section about
+document.addEventListener("DOMContentLoaded", function () {
+    window.addEventListener("scroll", revealListIcons);
+});
+
+function revealListIcons() {
+    const section = document.querySelector('.about');
+    const listIcons = document.querySelectorAll('.about ul li');
+    const rect = section.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+    const sixtyPercentHeight = rect.height * 0.6; // 60% de la hauteur de la section
+
+    if (rect.top <= windowHeight - sixtyPercentHeight) {
+        listIcons.forEach((icon, index) => {
+            setTimeout(() => {
+                icon.classList.add('visible'); 
+                console.log("Icône", index, " ajoutée à la classe visible"); 
+            }, index * 200);
+        });
+    }
+}
+
 
