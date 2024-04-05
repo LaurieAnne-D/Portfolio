@@ -227,6 +227,8 @@ ul {
             display: block;
             color: var(--coral-bright-color);
             font-size: 2.5rem;
+            position: relative;
+            top: 100px;
 
             .fa-chevron-down {
                 animation: moveUpDown 1s infinite alternate;
