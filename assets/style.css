@@ -350,7 +350,7 @@ main {
             width: calc(100% - 48px);
             padding: 12px;
             background-color: rgba(255, 225, 214, 0.5);
-            z-index: 1000;
+            z-index: 998;
 
             li {
                 padding: 12px;
@@ -1198,6 +1198,7 @@ footer {
     }
 
     .modalFooter {
+        position: sticky;
         p {
             align-self: end;
         }
