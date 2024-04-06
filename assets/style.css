@@ -948,10 +948,18 @@ footer {
         .modalHeader {
             display: flex;
             flex-direction: row-reverse;
-            justify-content: space-between;
+            justify-content: space-around;
             align-items: center;
             margin-bottom: 20px;
-            padding-top: 20px;
+            padding-top: 48px;
+            position: fixed;
+            background-color: var(--coral-ultralight-color);
+            width: 100%;
+            right: 1px;
+
+            h1 {
+                margin: 0;
+            }
 
             .fa-xmark {
                 font-size: 2.188rem;
@@ -961,7 +969,7 @@ footer {
         }
 
         .modalMain {
-            margin-top: 20px;
+            margin-top: 100px;
         }
 
         img {
@@ -1137,6 +1145,10 @@ footer {
     display: flex;
     flex-direction: column;
     background: var(--secondary-dark-color);
+
+    .modalHeader {
+        background-color: var(--secondary-dark-color);
+    }
 
     h1 {
         font-family: var(--secondary-font);
