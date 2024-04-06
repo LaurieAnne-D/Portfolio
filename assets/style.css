@@ -178,9 +178,12 @@ ul {
 
     }
 
+    div {
+        width: 100%;
+    }
+
     .navlinks-ctn {
         display: none;
-        width: 100%;
     }
 
     ul {
@@ -190,7 +193,7 @@ ul {
         position: fixed;
         top: 50px;
         gap: 10px;
-        width: 100%;
+        width: 0;
         height: 150px;
         margin-top: 30px;
         align-items: center;
@@ -200,6 +203,11 @@ ul {
         transition: all 0.5s ease-in-out;
         opacity: 0;
         visibility: hidden;
+
+        a {
+            color: var(--secondary-color);
+            transition: all 0.5s ease-in-out;
+        }
     }
 
     .navplay {
@@ -209,6 +217,7 @@ ul {
         ul {
             opacity: 1;
             visibility: visible;
+            width: 100%;
 
             a {
                 color: var(--coral-bright-color);
@@ -369,15 +378,14 @@ main {
                 }
             }
 
-            li:hover,
-            li:focus,
-            li:active {
+            .nav-item:hover,
+            .nav-item:focus,
+            .nav-item:active {
                 i {
                     color: var(--primary-color);
                     scale: 1.05;
                 }
             }
-
         }
     }
 
@@ -441,7 +449,7 @@ main {
                         align-items: center;
 
                         img {
-                            width: 65%;
+                            width: 60%;
                         }
 
                         figcaption {
@@ -463,14 +471,26 @@ main {
                                 padding: 10px;
                             }
 
-                            .seeProject {
-                                margin: 0;
-                                padding: 0;
-                                height: fit-content;
-                                text-align: center;
-                                font-size: 1rem;
-                                text-decoration: underline;
-                                cursor: pointer;
+                            .seeProject-ctn {
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: center;
+                                gap: 2px;
+
+                                .seeProject {
+                                    margin: 0;
+                                    padding: 0;
+                                    height: fit-content;
+                                    text-align: center;
+                                    font-size: 1rem;
+                                    text-decoration: underline;
+                                    cursor: pointer;
+                                }
+
+                                .fa-eye {
+                                    font-size: 1rem;
+                                    color: var(--primary-color);
+                                }
                             }
                         }
                     }
@@ -1130,7 +1150,6 @@ footer {
             justify-content: center;
             text-align: center;
             cursor: pointer;
-            margin-top: 32px;
             margin-bottom: 56px;
             font-size: 1.125rem;
 

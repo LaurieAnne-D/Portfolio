@@ -40,7 +40,9 @@ fetch('assets/projets.json')
                 const coverImg = document.createElement("img");
                 const h2 = document.createElement("h2");
                 const p = document.createElement("p");
+                const pSeeCtn = document.createElement("div");
                 const pSee = document.createElement("p");
+                const pSeeI = document.createElement("i");
 
                 const descriptionModal = projet.description;
                 const projetTitle = projet.title;
@@ -55,19 +57,20 @@ fetch('assets/projets.json')
                 h2.textContent = projet.title;
                 p.textContent = projet.subtitle;
                 pSee.textContent = "Voir le projet";
+                pSeeCtn.classList.add("seeProject-ctn");
                 pSee.classList.add("seeProject");
+                pSeeI.classList.add("fa-solid", "fa-eye");
 
-
-                pSee.addEventListener('click', function () {
+                pSeeCtn.addEventListener('click', function () {
                     openModal(projetTitle, descriptionModal, projet.url, projet.infos, projet.languages, projet.demo,);
                 });
-
-
 
                 figure.appendChild(coverImg);
                 figcaption.appendChild(h2);
                 figcaption.appendChild(p);
-                figcaption.appendChild(pSee);
+                figcaption.appendChild(pSeeCtn);
+                pSeeCtn.appendChild(pSee);
+                pSeeCtn.appendChild(pSeeI);
                 li.appendChild(figure);
                 figure.appendChild(figcaption);
                 projetContainer.appendChild(li);
