@@ -3,20 +3,93 @@
 const nav = document.querySelector(".navLinks-ctn");
 const clickableElement = document.querySelector('.clickable');
 
-function handleClick() {
-    if (clickableElement.classList.contains('fa-water')) {
-        clickableElement.classList.remove('fa-ellipsis-vertical');
-        clickableElement.classList.toggle('fa-xmark');
-        nav.classList.toggle('navplay');
-    } else if (clickableElement.classList.contains('fa-xmark')) {
-        clickableElement.classList.remove('fa-xmark');
-        clickableElement.classList.toggle('fa-water');
-        nav.classList.toggle('navplay');
+// Gestion des menus
+function handleClick(event) {
+    // Vérifier si l'élément cliqué appartient à la navbar
+    if (!event.target.closest('.navbar')) {
+        if (clickableElement.classList.contains('fa-water')) {
+            clickableElement.classList.remove('fa-ellipsis-vertical');
+            clickableElement.classList.toggle('fa-xmark');
+            nav.classList.toggle('navplay');
+        } else if (clickableElement.classList.contains('fa-xmark')) {
+            clickableElement.classList.remove('fa-xmark');
+            clickableElement.classList.toggle('fa-water');
+            nav.classList.toggle('navplay');
+        }
     }
 }
 
 clickableElement.addEventListener('click', handleClick);
 
+async function fetchNav() {
+    try {
+        const response = await fetch('assets/nav.json');
+        if (!response.ok) {
+            throw new Error('La réponse du serveur n\'est pas valide. Code d\'erreur : ' + response.status);
+        }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Une erreur est survenue lors de la récupération des données :', error);
+    }
+}
+
+async function displayNavbar() {
+    try {
+        const data = await fetchNav();
+        const navbar = document.querySelector(".navbar");
+
+        data.forEach(item => {
+            const li = document.createElement('li');
+            const link = document.createElement('a');
+            const icon = document.createElement('i');
+
+            link.classList.add("nav-item");
+            icon.classList = item.icon;
+            link.href = '#' + item.id;
+
+            link.addEventListener('click', handleClick);
+
+            link.appendChild(icon);
+            li.appendChild(link);
+            navbar.appendChild(li); // Correction : Utiliser navbar à la place de ul
+        });
+    } catch (error) {
+        console.error('Une erreur est survenue lors de l\'affichage des titres et des icônes :', error);
+    }
+}
+
+displayNavbar();
+async function showmenu() {
+    try {
+        const data = await fetchNav();
+        const ul = document.querySelector('.navLinks');
+
+        data.forEach(item => {
+            const li = document.createElement('li');
+            const link = document.createElement('a');
+            const icon = document.createElement('i');
+
+            icon.classList = item.icon;
+            link.textContent = item.title;
+            link.href = '#' + item.id;
+
+            link.addEventListener('click', handleClick);
+
+            li.appendChild(icon);
+            li.appendChild(link);
+            ul.appendChild(li);
+        });
+    } catch (error) {
+        console.error('Une erreur est survenue lors de l\'affichage des titres et des icônes :', error);
+    }
+}
+
+showmenu();
+
+
+
+// Gestion des skills
 function skillsCtn() {
     const skillsCtn = document.querySelector(".skills");
     const skillsCtnt = document.querySelector('.iconsCtn');
@@ -25,7 +98,7 @@ function skillsCtn() {
     skillsCtn.appendChild(clone);
 }
 
-
+// Gestion des projets
 fetch('assets/projets.json')
     .then(response => response.json())
     .then(projets => {
@@ -117,7 +190,7 @@ fetch('assets/projets.json')
 
 
 
-
+// Gestion du modal
 function openModal(title, descriptions, urls, infos, languages, demo) {
     const modalCtn = document.querySelector(".main");
     const modal = document.createElement("div");
@@ -183,19 +256,15 @@ function displayDemo(container, demo) {
     container.appendChild(demoImg);
 }
 
-
-// Fonction pour créer un élément HTML avec du texte et l'ajouter à un conteneur
 function createAndAppendElement(element, text) {
     const el = document.createElement(element);
     el.textContent = text;
     return el;
 }
 
-// Fonction principale pour afficher les descriptions dans un conteneur
 function displayDescriptions(container, descriptions) {
     for (const desc of descriptions) {
         if (typeof desc === 'object' && desc.title && desc.client && desc.details) {
-            // Traiter une description sous forme d'objet
             const { title, client, details } = desc;
             const descCtn = document.createElement("section");
 
@@ -317,7 +386,7 @@ function closeModal() {
 }
 
 
-
+// Gestion des Experiences
 async function fetchData() {
     try {
         const response = await fetch('assets/experiences.json');

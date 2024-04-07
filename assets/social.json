@@ -1,0 +1,17 @@
+[
+    {
+        "title": "instagram",
+        "link": "https://www.instagram.com/loune.studio?igsh=aWNsZ3J5b2E3bzd2&utm_source=qr",
+        "icon": "fa-brands fa-instagram"
+    },
+    {
+        "title": "github",
+        "link": "https://github.com/LaurieAnne-D",
+        "icon": "fa-brands fa-github"
+    },
+    {
+        "title": "twitter",
+        "link": "https://twitter.com/",
+        "icon": "fa-brands fa-twitter"
+    }
+]

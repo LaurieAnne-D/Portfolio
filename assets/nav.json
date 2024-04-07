@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Accueil",
+        "id": "accueil",
+        "icon": "fa-solid fa-house"
+    },
+    {
+        "title": "Projects",
+        "id": "projects",
+        "icon": "fa-solid fa-briefcase"
+    },
+    {
+        "title": "Skills",
+        "id": "skills",
+        "icon": "fa-solid fa-brain"
+    },
+    {
+        "title": "About",
+        "id": "about",
+        "icon": "fa-solid fa-user"
+    },
+    {
+        "title": "Experiences",
+        "id": "experiences",
+        "icon": "fa-solid fa-graduation-cap"
+    },
+            {
+        "title": "Contact",
+        "id": "contact",
+        "icon": "fa-solid fa-envelope"
+    }
+]
