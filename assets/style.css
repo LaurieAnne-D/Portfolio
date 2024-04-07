@@ -1337,7 +1337,7 @@ body.modal-open {
 
         .modalHeader {
           width: 73.3%;
-          max-width: 73.3% ;
+          max-width: 73.3%;
         }
       }
     }
@@ -1345,18 +1345,28 @@ body.modal-open {
 }
 
 @media (min-width: 1200px) {
+  h1 {
+    font-size: 3rem;
+
+    span {
+      font-size: 1.2rem;
+    }
+  }
+
   header {
     .navbar {}
   }
 
   main {
     .header-main {
+      height: 100vh;
+
       figure {
         flex-direction: row;
 
         img {
-          width: 405px;
-          height: 405px;
+          width: 505px;
+          height: 505px;
         }
 
         .intro {
@@ -1374,7 +1384,11 @@ body.modal-open {
     }
 
     .projects-sctn {
+      height: 80vh;
+
       .projects-drctn {
+        margin-top: 32px;
+
         .chevrons {
           width: calc(100% - 120px);
           max-width: 800px;
@@ -1384,6 +1398,10 @@ body.modal-open {
           .project {
             figure {
               flex-direction: row;
+
+              img {
+                max-width: 350px;
+              }
 
               figcaption {
                 max-width: 400px;
@@ -1395,7 +1413,8 @@ body.modal-open {
     }
 
     .skills-ctn {
-      flex-direction: row;
+      flex-direction: column;
+      height: 80vh;
 
       .skills-drct {
         display: flex;
@@ -1404,14 +1423,18 @@ body.modal-open {
         align-items: center;
         text-align: center;
         gap: 24px;
+        max-width: 600px;
+        margin-left: 60px;
       }
     }
 
     .about {
+      height: 80vh;
+
       .about-drct-row {
         flex-direction: row;
         gap: 24px;
-        margin-top: 24px;
+        margin-top: 32px;
       }
 
       .about-drct-column {
@@ -1420,14 +1443,24 @@ body.modal-open {
     }
 
     .career {
+      height: 80vh;
+      justify-content: center;
+
       div {
         flex-direction: row;
         gap: 24px;
         flex-wrap: wrap;
+        margin-top: 32px;
 
-        section{
+        section {
           width: calc(100% / 3);
         }
+      }
+    }
+
+    .contact {
+      div {
+        margin-top: 32px;
       }
     }
   }
