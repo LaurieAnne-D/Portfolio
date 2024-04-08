@@ -127,7 +127,7 @@ async function loadSkills() {
 
 async function replaceSkills() {
     try {
-        const response = await fetch('/assets/data/skills2.json');
+        const response = await fetch('/assets/data/task.json');
         if (!response.ok) {
             throw new Error('La réponse du serveur n\'est pas valide. Code d\'erreur : ' + response.status);
         }
