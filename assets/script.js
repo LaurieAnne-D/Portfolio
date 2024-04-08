@@ -92,7 +92,7 @@ showmenu();
 // Gestion des skills
 async function loadSkills() {
     try {
-        const response = await fetch('/assets/data/skills.json');
+        const response = await fetch('assets/skills.json');
         if (!response.ok) {
             throw new Error('La réponse du serveur n\'est pas valide. Code d\'erreur : ' + response.status);
         }
@@ -127,7 +127,7 @@ async function loadSkills() {
 
 async function replaceSkills() {
     try {
-        const response = await fetch('/assets/data/task.json');
+        const response = await fetch('/assets/task.json');
         if (!response.ok) {
             throw new Error('La réponse du serveur n\'est pas valide. Code d\'erreur : ' + response.status);
         }
