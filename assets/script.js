@@ -151,7 +151,7 @@ async function replaceSkills() {
     }
 }
 
-document.addEventListener("DOMContentLoaded", loadSkills);
+loadSkills();
 
 
 // Gestion des projets
