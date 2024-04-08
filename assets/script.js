@@ -23,7 +23,7 @@ clickableElement.addEventListener('click', handleClick);
 
 async function fetchNav() {
     try {
-        const response = await fetch('assets/nav.json');
+        const response = await fetch('assets/data/nav.json');
         if (!response.ok) {
             throw new Error('La réponse du serveur n\'est pas valide. Code d\'erreur : ' + response.status);
         }
@@ -52,7 +52,7 @@ async function displayNavbar() {
 
             link.appendChild(icon);
             li.appendChild(link);
-            navbar.appendChild(li); // Correction : Utiliser navbar à la place de ul
+            navbar.appendChild(li);
         });
     } catch (error) {
         console.error('Une erreur est survenue lors de l\'affichage des titres et des icônes :', error);
@@ -90,16 +90,72 @@ showmenu();
 
 
 // Gestion des skills
-function skillsCtn() {
-    const skillsCtn = document.querySelector(".skills");
-    const skillsCtnt = document.querySelector('.iconsCtn');
-    let clone = skillsCtnt.cloneNode(true);
+async function loadSkills() {
+    try {
+        const response = await fetch('/assets/data/skills.json');
+        if (!response.ok) {
+            throw new Error('La réponse du serveur n\'est pas valide. Code d\'erreur : ' + response.status);
+        }
+        const data = await response.json();
+        const skillsContainer = document.querySelector('.skills .iconsCtn');
+        skillsContainer.innerHTML = '';
 
-    skillsCtn.appendChild(clone);
+        data.forEach(skill => {
+            const listItem = document.createElement('li');
+            const icon = document.createElement('i');
+
+            if (skill.icon.startsWith("fa-solid")) {
+                icon.className = skill.icon;
+            } else {
+                icon.className = `fa-brands ${skill.icon}`;
+            }
+
+            const text = document.createElement('p');
+            listItem.classList = skill.title;
+            text.textContent = skill.title;
+            listItem.appendChild(icon);
+            listItem.appendChild(text);
+            skillsContainer.appendChild(listItem);
+        });
+
+        document.querySelector('.more').addEventListener('click', replaceSkills,);
+        revealListItems();
+    } catch (error) {
+        console.error('Une erreur s\'est produite :', error);
+    }
 }
 
+async function replaceSkills() {
+    try {
+        const response = await fetch('/assets/data/skills2.json');
+        if (!response.ok) {
+            throw new Error('La réponse du serveur n\'est pas valide. Code d\'erreur : ' + response.status);
+        }
+        const data = await response.json();
+        const skillsContainer = document.querySelector('.skills .iconsCtn');
+        skillsContainer.innerHTML = '';
+
+        data.forEach(skill => {
+            const listItem = document.createElement('li');
+            const text = document.createElement('p');
+            listItem.classList.add(skill.class);
+            text.textContent = skill.title;
+            listItem.appendChild(text);
+            skillsContainer.appendChild(listItem);
+        });
+
+        document.querySelector('.back').addEventListener('click', loadSkills,);
+        revealListItems();
+    } catch (error) {
+        console.error('Une erreur s\'est produite lors du remplacement des compétences :', error);
+    }
+}
+
+document.addEventListener("DOMContentLoaded", loadSkills);
+
+
 // Gestion des projets
-fetch('assets/projets.json')
+fetch('assets/data/projets.json')
     .then(response => response.json())
     .then(projets => {
         const projetContainer = document.querySelector(".projectsCtn");
@@ -389,7 +445,7 @@ function closeModal() {
 // Gestion des Experiences
 async function fetchData() {
     try {
-        const response = await fetch('assets/experiences.json');
+        const response = await fetch('assets/data/experiences.json');
         if (!response.ok) {
             throw new Error('La réponse du serveur n\'est pas valide. Code d\'erreur : ' + response.status);
         }
@@ -506,10 +562,6 @@ function revealElements() {
 }
 
 //Affichage progressif des skills
-document.addEventListener("DOMContentLoaded", function () {
-    window.addEventListener("scroll", revealListItems);
-});
-
 function revealListItems() {
     const section = document.querySelector('.skills-ctn');
     const listItems = document.querySelectorAll('.skills-ctn .iconsCtn li');
@@ -526,6 +578,10 @@ function revealListItems() {
     }
 }
 
+// Ajout d'un écouteur d'événements pour appeler revealListItems() lors du scroll
+window.addEventListener('scroll', revealListItems);
+
+
 // Affichage des icons section about
 document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("scroll", revealListIcons);
@@ -541,8 +597,8 @@ function revealListIcons() {
     if (rect.top <= windowHeight - sixtyPercentHeight) {
         listIcons.forEach((icon, index) => {
             setTimeout(() => {
-                icon.classList.add('visible'); 
-                console.log("Icône", index, " ajoutée à la classe visible"); 
+                icon.classList.add('visible');
+                console.log("Icône", index, " ajoutée à la classe visible");
             }, index * 200);
         });
     }

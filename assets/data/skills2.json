@@ -1,0 +1,37 @@
+[
+    {
+        "title": "Développement de l'interface utilisateur (UI)",
+        "details": "Concevoir et développer l'interface utilisateur d'une application web ou mobile en utilisant des langages de balisage comme HTML, des langages de style comme CSS, et des langages de programmation côté client comme JavaScript.",
+        "class": "newSkills"
+    },
+    {
+        "title": "Intégration de maquettes graphiques",
+        "details": "Transformer les maquettes graphiques fournies par les designers en interfaces utilisateur interactives et fonctionnelles.",
+        "class": "newSkills"
+    },
+    {
+        "title": " Responsive design",
+        "details": "Concevoir des interfaces utilisateur qui s'adaptent et s'affichent correctement sur une variété de tailles d'écrans et de dispositifs",
+        "class": "newSkills"
+    },
+    {
+        "title": "Compatibilité multiplateforme et multi-navigateurs",
+        "details": "S'assurer que l'interface utilisateur fonctionne de manière cohérente sur différentes plates-formes (ordinateurs de bureau, smartphones, tablettes) et sur différents navigateurs web (Google Chrome, Mozilla Firefox, Safari, etc.).",
+        "class": "newSkills"
+    },
+    {
+        "title": "Développement d'animations et d'effets visuels",
+        "details": "Implémenter des animations, des transitions et des effets visuels pour améliorer l'expérience utilisateur et rendre l'interface plus attrayante.",
+        "class": "newSkills"
+    },
+    {
+        "title": "Veille technologique",
+        "détails": "Se tenir au courant des dernières tendances, des meilleures pratiques et des nouvelles technologies dans le domaine du développement front-end pour améliorer ses compétences et rester à jour",
+        "class": "newSkills"
+    },
+    {
+        "title": "Retour",
+        "détails": "Retour",
+        "class": "back"
+    }
+]

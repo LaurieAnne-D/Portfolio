@@ -1,0 +1,34 @@
+[
+    {
+        "title": "HTML",
+        "icon": "fa-brands fa-html5"
+    },
+    {
+        "title": "CSS3",
+        "icon": "fa-brands fa-css3-alt"
+    },
+    {
+        "title": "JS",
+        "icon": "fa-brands fa-js"
+    },
+    {
+        "title": "React",
+        "icon": "fa-brands fa-react"
+    },
+    {
+        "title": "Sass",
+        "icon": "fa-brands fa-sass"
+    },
+    {
+        "title": "GitHub",
+        "icon": "fa-brands fa-github"
+    },
+    {
+        "title": "Figma",
+        "icon": "fa-brands fa-figma"
+    },
+    {
+        "title": "more",
+        "icon": "fa-solid fa-arrow-right"
+    }
+]

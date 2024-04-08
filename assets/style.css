@@ -581,8 +581,8 @@ main {
 
   /* skills section */
   .skills-ctn .iconsCtn li {
+    transition: opacity 0.5s ease;
     opacity: 0;
-    transition: opacity 2s ease;
   }
 
   .skills-ctn {
@@ -654,11 +654,45 @@ main {
           }
         }
 
+        .newSkills {
+          height: 40px;
+          width: calc(100% - 72px);
+          max-width: 400px;
+        }
+
+        .back {
+          height: 40px;
+          width: calc(100% - 72px);
+          max-width: 400px;
+          cursor: pointer;
+
+          p {
+            color: var(--coral-light-color);
+          }
+        }
+
+        .back:hover,
+        .back:focus,
+        .back:active {
+          box-shadow: 8px 10px 15px -1px var(--coral-light-color);
+          transform: scale(1.1);
+
+          p {
+            color: var(--coral-bright-color);
+            font-size: 1.125rem;
+            font-weight: 600;
+          }
+        }
+
         .more {
           transition: all 0.4s ease-in-out;
 
           i {
             color: var(--coral-light-color);
+          }
+
+          p {
+            display: none;
           }
         }
 
@@ -1342,8 +1376,6 @@ body.modal-open {
     .modal {
       .modalContent {
         border-left: var(--secondary-dark-color) 1px solid;
-
-        .modalHeader {}
       }
     }
   }
@@ -1363,10 +1395,6 @@ body.modal-open {
       width: 30%;
       border-left: 1px solid var(--secondary-dark-color);
     }
-  }
-
-  header {
-    .navbar {}
   }
 
   main {
