@@ -92,7 +92,7 @@ showmenu();
 // Gestion des skills
 async function loadSkills() {
     try {
-        const response = await fetch('assets/skills.json');
+        const response = await fetch('assets/data/skills.json');
         if (!response.ok) {
             throw new Error('La réponse du serveur n\'est pas valide. Code d\'erreur : ' + response.status);
         }
@@ -117,8 +117,8 @@ async function loadSkills() {
             listItem.appendChild(text);
             skillsContainer.appendChild(listItem);
         });
-
-        document.querySelector('.more').addEventListener('click', replaceSkills,);
+        const more = document.querySelector('.more');
+        more.addEventListener('click', replaceSkills,);
         revealListItems();
     } catch (error) {
         console.error('Une erreur s\'est produite :', error);
@@ -144,7 +144,8 @@ async function replaceSkills() {
             skillsContainer.appendChild(listItem);
         });
 
-        document.querySelector('.back').addEventListener('click', loadSkills,);
+        const back = document.querySelector('.back');
+        back.addEventListener('click', loadSkills,);
         revealListItems();
     } catch (error) {
         console.error('Une erreur s\'est produite lors du remplacement des compétences :', error);
@@ -155,7 +156,7 @@ loadSkills();
 
 
 // Gestion des projets
-fetch('assets/data/projets.json')
+fetch('assets/data/projects.json')
     .then(response => response.json())
     .then(projets => {
         const projetContainer = document.querySelector(".projectsCtn");
@@ -555,7 +556,7 @@ function revealElements() {
     elements.forEach(element => {
         const elementTop = element.getBoundingClientRect().top;
         const windowHeight = window.innerHeight;
-        if (elementTop < windowHeight / 1.2) { // Changez ce nombre pour ajuster le point où les éléments apparaissent
+        if (elementTop < windowHeight / 1.2) { 
             element.style.opacity = 1;
         }
     });
@@ -567,12 +568,10 @@ function revealListItems() {
     const listItems = document.querySelectorAll('.skills-ctn .iconsCtn li');
     const rect = section.getBoundingClientRect();
     const windowHeight = window.innerHeight;
-    const fiftyPercentHeight = rect.height * 0.5; // 50% de la hauteur de la section
-
-    // Vérifiez si le haut de la section est à 50% de sa hauteur dans la fenêtre
+    const fiftyPercentHeight = rect.height * 0.5;
     if (rect.top <= windowHeight - fiftyPercentHeight) {
         listItems.forEach((item, index) => {
-            item.style.transition = `opacity 0.5s ease ${index * 0.2}s`; // Délai croissant de 0.2s entre chaque élément
+            item.style.transition = `opacity 0.5s ease ${index * 0.2}s`;
             item.style.opacity = 1;
         });
     }
@@ -592,8 +591,7 @@ function revealListIcons() {
     const listIcons = document.querySelectorAll('.about ul li');
     const rect = section.getBoundingClientRect();
     const windowHeight = window.innerHeight;
-    const sixtyPercentHeight = rect.height * 0.6; // 60% de la hauteur de la section
-
+    const sixtyPercentHeight = rect.height * 0.6;
     if (rect.top <= windowHeight - sixtyPercentHeight) {
         listIcons.forEach((icon, index) => {
             setTimeout(() => {
