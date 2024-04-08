@@ -90,83 +90,65 @@ showmenu();
 
 
 // Gestion des skills
-function loadSkills() {
+async function loadSkills() {
     try {
-        fetch('assets/data/skills.json')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('La réponse du serveur n\'est pas valide. Code d\'erreur : ' + response.status);
-                }
-                return response.json();
-            })
-            .then(data => {
-                const skillsContainer = document.querySelector('.skills .iconsCtn');
-                skillsContainer.innerHTML = '';
+        const response = await fetch('assets/data/skills.json');
+        if (!response.ok) {
+            throw new Error('La réponse du serveur n\'est pas valide. Code d\'erreur : ' + response.status);
+        }
+        const data = await response.json();
+        const skillsContainer = document.querySelector('.skills .iconsCtn');
+        skillsContainer.innerHTML = '';
 
-                data.forEach(skill => {
-                    const listItem = document.createElement('li');
-                    const icon = document.createElement('i');
+        data.forEach(skill => {
+            const listItem = document.createElement('li');
+            const icon = document.createElement('i');
 
-                    if (skill.icon.startsWith("fa-solid")) {
-                        icon.className = skill.icon;
-                    } else {
-                        icon.className = `fa-brands ${skill.icon}`;
-                    }
+            if (skill.icon.startsWith("fa-solid")) {
+                icon.className = skill.icon;
+            } else {
+                icon.className = `fa-brands ${skill.icon}`;
+            }
 
-                    const text = document.createElement('p');
-                    listItem.classList = skill.title;
-                    text.textContent = skill.title;
-                    listItem.appendChild(icon);
-                    listItem.appendChild(text);
-                    skillsContainer.appendChild(listItem);
-                });
-
-                const more = document.querySelector('.more');
-                more.addEventListener('click', replaceSkills);
-                revealListItems();
-            })
-            .catch(error => {
-                console.error('Une erreur s\'est produite :', error);
-            });
+            const text = document.createElement('p');
+            listItem.classList = skill.title;
+            text.textContent = skill.title;
+            listItem.appendChild(icon);
+            listItem.appendChild(text);
+            skillsContainer.appendChild(listItem);
+        });
+        const more = document.querySelector('.more');
+        more.addEventListener('click', replaceSkills,);
     } catch (error) {
         console.error('Une erreur s\'est produite :', error);
     }
 }
 
-function replaceSkills() {
+async function replaceSkills() {
     try {
-        const response = fetch('/assets/data/abilities.json')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('La réponse du serveur n\'est pas valide. Code d\'erreur : ' + response.status);
-                }
-                return response.json();
-            })
-            .then(data => {
-                const skillsContainer = document.querySelector('.skills .iconsCtn');
-                skillsContainer.innerHTML = '';
+        const response = await fetch('/assets/data/abilities.json');
+        if (!response.ok) {
+            throw new Error('La réponse du serveur n\'est pas valide. Code d\'erreur : ' + response.status);
+        }
+        const data = await response.json();
+        const skillsContainer = document.querySelector('.skills .iconsCtn');
+        skillsContainer.innerHTML = '';
 
-                data.forEach(skill => {
-                    const listItem = document.createElement('li');
-                    const text = document.createElement('p');
-                    listItem.classList.add(skill.class);
-                    text.textContent = skill.title;
-                    listItem.appendChild(text);
-                    skillsContainer.appendChild(listItem);
-                });
+        data.forEach(skill => {
+            const listItem = document.createElement('li');
+            const text = document.createElement('p');
+            listItem.classList.add(skill.class);
+            text.textContent = skill.title;
+            listItem.appendChild(text);
+            skillsContainer.appendChild(listItem);
+        });
 
-                const back = document.querySelector('.back');
-                back.addEventListener('click', loadSkills);
-                revealListItems();
-            })
-            .catch(error => {
-                console.error('Une erreur s\'est produite lors du remplacement des compétences :', error);
-            });
+        const back = document.querySelector('.back');
+        back.addEventListener('click', loadSkills,);
     } catch (error) {
         console.error('Une erreur s\'est produite lors du remplacement des compétences :', error);
     }
 }
-
 
 loadSkills();
 
