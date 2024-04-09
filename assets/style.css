@@ -1402,8 +1402,6 @@ body.modal-open {
       height: 100vh;
 
       figure {
-        flex-direction: row;
-
         img {
           width: 505px;
           height: 505px;
@@ -1414,6 +1412,10 @@ body.modal-open {
 
           h1 {
             font-size: 3rem;
+
+            .br {
+              display: none;
+            }
 
             span {
               font-size: 1.2rem;

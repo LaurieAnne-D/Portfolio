@@ -88,71 +88,6 @@ async function showmenu() {
 showmenu();
 
 
-
-// Gestion des skills
-async function loadSkills() {
-    try {
-        const response = await fetch('assets/data/skills.json');
-        if (!response.ok) {
-            throw new Error('La réponse du serveur n\'est pas valide. Code d\'erreur : ' + response.status);
-        }
-        const data = await response.json();
-        const skillsContainer = document.querySelector('.skills .iconsCtn');
-        skillsContainer.innerHTML = '';
-
-        data.forEach(skill => {
-            const listItem = document.createElement('li');
-            const icon = document.createElement('i');
-
-            if (skill.icon.startsWith("fa-solid")) {
-                icon.className = skill.icon;
-            } else {
-                icon.className = `fa-brands ${skill.icon}`;
-            }
-
-            const text = document.createElement('p');
-            listItem.classList = skill.title;
-            text.textContent = skill.title;
-            listItem.appendChild(icon);
-            listItem.appendChild(text);
-            skillsContainer.appendChild(listItem);
-        });
-        const more = document.querySelector('.more');
-        more.addEventListener('click', replaceSkills,);
-    } catch (error) {
-        console.error('Une erreur s\'est produite :', error);
-    }
-}
-
-async function replaceSkills() {
-    try {
-        const response = await fetch('/assets/data/abilities.json');
-        if (!response.ok) {
-            throw new Error('La réponse du serveur n\'est pas valide. Code d\'erreur : ' + response.status);
-        }
-        const data = await response.json();
-        const skillsContainer = document.querySelector('.skills .iconsCtn');
-        skillsContainer.innerHTML = '';
-
-        data.forEach(skill => {
-            const listItem = document.createElement('li');
-            const text = document.createElement('p');
-            listItem.classList.add(skill.class);
-            text.textContent = skill.title;
-            listItem.appendChild(text);
-            skillsContainer.appendChild(listItem);
-        });
-
-        const back = document.querySelector('.back');
-        back.addEventListener('click', loadSkills,);
-    } catch (error) {
-        console.error('Une erreur s\'est produite lors du remplacement des compétences :', error);
-    }
-}
-
-loadSkills();
-
-
 // Gestion des projets
 fetch('assets/data/projects.json')
     .then(response => response.json())
@@ -244,7 +179,6 @@ fetch('assets/data/projects.json')
     });
 
 
-
 // Gestion du modal
 function openModal(title, descriptions, urls, infos, languages, demo) {
     const modalCtn = document.querySelector(".main");
@@ -319,6 +253,7 @@ function createAndAppendElement(element, text) {
 
 function displayDescriptions(container, descriptions) {
     for (const desc of descriptions) {
+        console.log(desc);
         if (typeof desc === 'object' && desc.title && desc.client && desc.details) {
             const { title, client, details } = desc;
             const descCtn = document.createElement("section");
@@ -439,6 +374,122 @@ function closeModal() {
         modal.remove();
     }, 300);
 }
+
+
+// Gestion des skills
+async function loadSkills() {
+    try {
+        const response = await fetch('assets/data/skills.json');
+        if (!response.ok) {
+            throw new Error('La réponse du serveur n\'est pas valide. Code d\'erreur : ' + response.status);
+        }
+        const data = await response.json();
+        const skillsContainer = document.querySelector('.skills .iconsCtn');
+        skillsContainer.innerHTML = '';
+
+        data.forEach(skill => {
+            const listItem = document.createElement('li');
+            const icon = document.createElement('i');
+
+            if (skill.icon.startsWith("fa-solid")) {
+                icon.className = skill.icon;
+            } else {
+                icon.className = `fa-brands ${skill.icon}`;
+            }
+
+            const text = document.createElement('p');
+            listItem.classList = skill.title;
+            text.textContent = skill.title;
+            listItem.appendChild(icon);
+            listItem.appendChild(text);
+            skillsContainer.appendChild(listItem);
+        });
+        const more = document.querySelector('.more');
+        more.addEventListener('click', replaceSkills,);
+        revealListItems();
+    } catch (error) {
+        console.error('Une erreur s\'est produite :', error);
+    }
+}
+
+async function fetchServices() {
+    try {
+        const response = await fetch('assets/data/services.json');
+        if (!response.ok) {
+            throw new Error('La réponse du serveur n\'est pas valide. Code d\'erreur : ' + response.status);
+        }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Une erreur est survenue lors de la récupération des données :', error);
+        throw error;
+    }
+}
+
+async function replaceSkills() {
+    try {
+        const services = await fetchServices();
+        const skillsContainer = document.querySelector('.skills .iconsCtn');
+        skillsContainer.innerHTML = '';
+
+        services.forEach(skill => {
+            const listItem = document.createElement('li');
+            const text = document.createElement('p');
+            listItem.classList.add(skill.class);
+            text.textContent = skill.title;
+            listItem.appendChild(text);
+            skillsContainer.appendChild(listItem);
+        });
+
+        const back = document.querySelector('.back');
+        back.addEventListener('click', loadSkills);
+        revealListItems();
+    } catch (error) {
+        console.error('Une erreur s\'est produite lors du remplacement des compétences :', error);
+    }
+}
+
+loadSkills();
+
+//Gestion des services
+async function displayServices() {
+    try {
+        const services = await fetchServices();
+        console.log(services);
+        const servicesSection = document.getElementById('services');
+
+        // Création de la liste des services
+        const servicesList = document.createElement('ul');
+        servicesList.classList.add('services-list');
+
+        // Parcours de chaque service
+        services.forEach(service => {
+            // Création de l'élément de service
+            const serviceItem = document.createElement('li');
+            serviceItem.classList.add('service-item');
+
+            // Création du titre du service
+            const title = document.createElement('h2');
+            title.textContent = service.title;
+            serviceItem.appendChild(title);
+
+            // Création des détails du service
+            const details = document.createElement('p');
+            details.textContent = service.details;
+            serviceItem.appendChild(details);
+
+            // Ajout de l'élément de service à la liste des services
+            servicesList.appendChild(serviceItem);
+        });
+
+        // Ajout de la liste des services à la section des services
+        servicesSection.appendChild(servicesList);
+    } catch (error) {
+        console.error('Une erreur s\'est produite lors de l\'affichage des services :', error);
+    }
+}
+
+displayServices();
 
 
 // Gestion des Experiences
@@ -594,7 +645,6 @@ function revealListIcons() {
         listIcons.forEach((icon, index) => {
             setTimeout(() => {
                 icon.classList.add('visible');
-                console.log("Icône", index, " ajoutée à la classe visible");
             }, index * 200);
         });
     }

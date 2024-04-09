@@ -26,12 +26,12 @@
     },
     {
         "title": "Veille technologique",
-        "détails": "Se tenir au courant des dernières tendances, des meilleures pratiques et des nouvelles technologies dans le domaine du développement front-end pour améliorer ses compétences et rester à jour",
+        "details": "Se tenir au courant des dernières tendances, des meilleures pratiques et des nouvelles technologies dans le domaine du développement front-end pour améliorer ses compétences et rester à jour",
         "class": "newSkills"
     },
     {
         "title": "Retour",
-        "détails": "Retour",
+        "details": "Retour",
         "class": "back"
     }
 ]
