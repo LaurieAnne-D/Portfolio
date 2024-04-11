@@ -34,27 +34,22 @@
 @keyframes changeBackground {
   0% {
     background-color: var(--lila-color);
-
   }
 
   25% {
     background-color: var(--bleu-color);
-
   }
 
   50% {
     background-color: var(--green-color);
-
   }
 
   75% {
     background-color: var(--yellow-color);
-
   }
 
   100% {
     background-color: var(--lila-color);
-
   }
 }
 
@@ -65,11 +60,40 @@
 
   50% {
     transform: translateY(-5px);
-
   }
 
   100% {
     transform: translateY(0);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+  0% {
+    color: var(--lila-color);
+  }
+
+  25% {
+    color: var(--bleu-color);
+  }
+
+  50% {
+    color: var(--green-color);
+  }
+
+  75% {
+    color: var(--yellow-color);
+  }
+
+  100% {
+    color: var(--lila-color);
   }
 }
 
@@ -175,7 +199,6 @@ ul {
     text-align: start;
     position: fixed;
     z-index: 1001;
-
   }
 
   div {
@@ -779,7 +802,8 @@ main {
       max-width: 600px;
 
       p {
-        padding: 4px
+        padding: 4px;
+        padding-left: 14px;
       }
 
       ;
@@ -861,18 +885,31 @@ main {
         padding: 16px;
         box-shadow: 0px 10px 15px -7px var(--coral-color);
 
-        h2{
+        i {
+          display: inline-block;
+          align-self: end;
+          text-align: end;
           font-size: 1.25rem;
-          text-align: center;
         }
 
-        p{
+        .rotate-infinite {
+          animation: rotate 3s infinite linear;
+        }
+
+        h2 {
+          font-size: 1.25rem;
+          text-align: center;
+          margin: 16px 0;
+        }
+
+        p {
           text-align: center;
           width: 250px;
+          font-size: 1.125rem;
         }
       }
 
-      .back {
+      #nopresta {
         display: none;
       }
     }
@@ -990,7 +1027,6 @@ main {
           height: 200px;
           line-height: 180%;
           background-color: var(--coral-ultralight-color);
-
         }
 
         select {
@@ -1012,7 +1048,6 @@ main {
           background-color: var(--secondary-color);
           color: var(--coral-bright-color);
           box-shadow: 8px 10px 15px -1px var(--coral-color);
-
         }
       }
     }

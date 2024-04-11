@@ -467,6 +467,12 @@ async function displayServices() {
             // Création de l'élément de service
             const serviceItem = document.createElement('li');
             serviceItem.classList.add(service.class);
+            serviceItem.id = service.id;
+
+            //création de l'icone du service
+            const icon = document.createElement('i');
+            icon.classList = "fa-solid fa-certificate rotate-infinite";
+            serviceItem.appendChild(icon);
 
             // Création du titre du service
             const title = document.createElement('h2');
