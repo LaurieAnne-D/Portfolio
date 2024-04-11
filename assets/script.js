@@ -466,7 +466,7 @@ async function displayServices() {
         services.forEach(service => {
             // Création de l'élément de service
             const serviceItem = document.createElement('li');
-            serviceItem.classList.add('service-item');
+            serviceItem.classList.add(service.class);
 
             // Création du titre du service
             const title = document.createElement('h2');
