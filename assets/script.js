@@ -117,6 +117,7 @@ fetch('assets/data/projects.json')
                     li.classList.add("active");
                 }
                 coverImg.src = projet.cover;
+                coverImg.alt = projet.altcover;
                 h2.textContent = projet.title;
                 p.textContent = projet.subtitle;
                 pSee.textContent = "Voir le projet";
@@ -125,7 +126,7 @@ fetch('assets/data/projects.json')
                 pSeeI.classList.add("fa-solid", "fa-eye");
 
                 pSeeCtn.addEventListener('click', function () {
-                    openModal(projetTitle, descriptionModal, projet.url, projet.infos, projet.languages, projet.demo,);
+                    openModal(projetTitle, descriptionModal, projet.url, projet.infos, projet.languages, projet.demo, projet.altdemo);
                 });
 
                 figure.appendChild(coverImg);
@@ -180,7 +181,7 @@ fetch('assets/data/projects.json')
 
 
 // Gestion du modal
-function openModal(title, descriptions, urls, infos, languages, demo) {
+function openModal(title, descriptions, urls, infos, languages, demo, altdemo) {
     const modalCtn = document.querySelector(".main");
     const modal = document.createElement("div");
     const modalContent = document.createElement("section");
@@ -207,8 +208,7 @@ function openModal(title, descriptions, urls, infos, languages, demo) {
     modalCloseIcon.classList.add("fa-solid", "fa-xmark");
     closeModalBttmIcon.classList.add("fa-solid", "fa-square-xmark");
     closeModalBottom.classList.add("closeModalBottom");
-
-
+    
     modalCtn.insertBefore(modal, modalCtn.firstChild);
     modal.appendChild(modalContent);
     modalContent.appendChild(modalHeader);
@@ -219,7 +219,8 @@ function openModal(title, descriptions, urls, infos, languages, demo) {
     modalFooter.appendChild(closeModalBottom);
     closeModalBottom.appendChild(closeModalBttmIcon);
 
-    displayDemo(modalMain, demo);
+    displayDemo(modalMain, demo, altdemo);
+
     displayDescriptions(modalMain, descriptions);
     displayURLs(modalMain, urls);
     displayInfosAndLanguages(modalMain, infos, languages);
@@ -238,12 +239,15 @@ function openModal(title, descriptions, urls, infos, languages, demo) {
 }
 
 
-function displayDemo(container, demo) {
+function displayDemo(container, demo, altdemo) {
     if (!demo) return;
     const demoImg = document.createElement("img");
     demoImg.src = demo;
+    demoImg.alt = altdemo || ""; // Assurez-vous que altdemo est défini
+    demoImg.classList.add("demo");
     container.appendChild(demoImg);
 }
+
 
 function createAndAppendElement(element, text) {
     const el = document.createElement(element);

@@ -409,10 +409,9 @@ main {
       }
 
       img {
-        width: 305px;
-        height: 305px;
+        width: 312px;
+        height: 312px;
         border-radius: 100%;
-        border: var(--coral-light-color) 1px solid;
       }
     }
 
