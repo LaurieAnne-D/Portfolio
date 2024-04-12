@@ -42,15 +42,19 @@ async function displayNavbar() {
         data.forEach(item => {
             const li = document.createElement('li');
             const link = document.createElement('a');
+            const span = document.createElement('span');
             const icon = document.createElement('i');
 
             link.classList.add("nav-item");
             icon.classList = item.icon;
             link.href = '#' + item.id;
+            span.textContent = item.title;
+            span.classList.add("a-txt");
 
             link.addEventListener('click', handleClick);
 
             link.appendChild(icon);
+            link.appendChild(span);
             li.appendChild(link);
             navbar.appendChild(li);
         });
@@ -243,7 +247,7 @@ function displayDemo(container, demo, altdemo) {
     if (!demo) return;
     const demoImg = document.createElement("img");
     demoImg.src = demo;
-    demoImg.alt = altdemo || ""; // Assurez-vous que altdemo est défini
+    demoImg.alt = altdemo || "";
     demoImg.classList.add("demo");
     container.appendChild(demoImg);
 }
@@ -531,7 +535,7 @@ async function displayData() {
 
             section.appendChild(header);
 
-            const title = document.createElement('h3');
+            const title = document.createElement('h2');
             title.textContent = experience.Poste;
             header.appendChild(title);
 

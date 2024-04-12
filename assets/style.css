@@ -175,6 +175,10 @@ ul {
 
 }
 
+.a-txt {
+  display: none;
+}
+
 /*style*/
 /*loader*/
 .loader {
@@ -300,6 +304,15 @@ ul {
     align-items: center;
     text-align: center;
     gap: 10px;
+
+    h2 {
+      margin: 0;
+      font-family: var(--secondary-font);
+      font-size: 1.25rem;
+      font-weight: 300;
+      letter-spacing: 0.5px;
+      word-spacing: 1.5px;
+    }
 
     a {
       display: block;
@@ -471,7 +484,7 @@ main {
     padding-bottom: 64px;
 
     h1 {
-      color: var(--secondary-color);
+      color: var(--primary-color);
     }
 
     .projects-drctn {
@@ -492,7 +505,7 @@ main {
         flex-direction: row;
         justify-content: space-between;
         max-width: 340px;
-        width: calc(100% - 60px);
+        width: calc(100% - 80px);
         position: absolute;
       }
 
@@ -517,13 +530,11 @@ main {
             align-items: center;
 
             img {
-              width: 60%;
+              width: 55%;
               max-width: 250px;
             }
 
             figcaption {
-              color: var(--secondary-color);
-
               h2 {
                 text-align: center;
                 margin-top: 10px;
@@ -536,7 +547,7 @@ main {
                 text-align: center;
                 color: var(--primary-color);
                 font-size: 1.125rem;
-                height: 80px;
+                height: 55px;
                 padding: 10px;
               }
 
@@ -625,7 +636,6 @@ main {
 
     p {
       font-size: 1.125rem;
-      color: var(--coral-bright-color);
       padding: 0 20px;
     }
 
@@ -790,6 +800,15 @@ main {
         border-radius: 12px;
         border: 1px Solid var(--secondary-dark-color);
         box-shadow: 0px 10px 15px -7px var(--coral-color);
+
+        h2 {
+          margin: 0;
+          font-family: var(--secondary-font);
+          font-size: 1.25rem;
+          font-weight: 300;
+          letter-spacing: 0.5px;
+          word-spacing: 1.5px;
+        }
       }
     }
 
@@ -839,8 +858,14 @@ main {
         border: 1px Solid var(--primary-color);
         transition: all 0.3s ease-in-out;
 
-        h3 {
+        h2 {
+          text-align: center;
+          margin-top: 10px;
+          font-family: var(--secondary-font);
+          letter-spacing: 2px;
           font-size: 1rem;
+          font-weight: 400;
+          margin-bottom: 5px;
         }
 
         p {
@@ -955,8 +980,14 @@ main {
         figcaption {
           transition: all 0.4s;
 
-          h3 {
+          h2 {
             font-size: 1rem;
+            text-align: center;
+            margin-top: 10px;
+            font-family: var(--secondary-font);
+            letter-spacing: 2px;
+            font-weight: 400;
+            margin-bottom: 5px;
           }
 
           .linkCtn {
@@ -966,7 +997,7 @@ main {
 
             .link {
               color: var(--coral-bright-color);
-              font-size: 1rem;
+              font-size: 0.875rem;
               font-weight: 300;
             }
 
@@ -983,70 +1014,6 @@ main {
           i {
             transform: translateX(.25rem);
           }
-        }
-      }
-    }
-
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 12px;
-      width: 100%;
-      padding-bottom: 24px;
-      display: none;
-
-      form {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 24px;
-        width: 100%;
-
-        input,
-        textarea,
-        select {
-          width: calc(100% - 56px);
-          height: 56px;
-          border-radius: 10px;
-          box-shadow: 0px 10px 15px -7px var(--coral-color);
-          background-color: transparent;
-          border: 2px solid var(--coral-color);
-          font-family: var(--secondary-font);
-          font-size: 0.875rem;
-          padding: 4px;
-          color: var(--primary-color);
-          text-align: center;
-          letter-spacing: 2px;
-        }
-
-        textarea {
-          height: 200px;
-          line-height: 180%;
-          background-color: var(--coral-ultralight-color);
-        }
-
-        select {
-          width: calc(100% - 40px);
-          height: 62px;
-        }
-
-        .submit {
-          border: none;
-          font-size: 1rem;
-          color: var(--coral-light-color);
-          background-color: var(--coral-ultralight-color);
-          transition: all 0.3s ease-in-out;
-        }
-
-        .submit:hover,
-        .submit:focus {
-          transform: scale(1.05);
-          background-color: var(--secondary-color);
-          color: var(--coral-bright-color);
-          box-shadow: 8px 10px 15px -1px var(--coral-color);
         }
       }
     }
