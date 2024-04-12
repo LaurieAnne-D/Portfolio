@@ -2,9 +2,9 @@
     {
         "title": "Kasa",
         "subtitle": "Développement d'une application web de location immobilière en utilisant React.",
-        "cover": "assets/images/kasa.png",
+        "cover": "assets/images/kasa.webp",
         "altcover": "Photographie d'un smartphone affichant la page d'accueil du site Kasa",
-        "demo": "assets/images/kasa2.png",
+        "demo": "assets/images/kasa2.webp",
         "altdemo": "Photographie d'un ordinateur et d'un smartphone affichant la page d'accueil du site Kasa",
         "description": [
             {
@@ -35,9 +35,9 @@
     {
         "title": "Qwenta",
         "subtitle": "Élaboration de la stratégie de développement du site pour le client.",
-        "cover": "assets/images/qwenta.png",
+        "cover": "assets/images/qwenta.webp",
         "altcover": "Photographie d'un smartphone affichant la page d'accueil du site Qwenta",
-        "demo": "assets/images/qwenta2.png",
+        "demo": "assets/images/qwenta2.webp",
         "altdemo": "Photographie d'un ordinateur et d'un smartphone affichant la page d'accueil du site Qwenta",
         "description": [
             {
@@ -66,9 +66,9 @@
     {
         "title": "Sophie Bluel",
         "subtitle": "Dynamiser un portfolio en le rendant interactif grâce à JavaScript.",
-        "cover": "assets/images/sophieb.png",
+        "cover": "assets/images/sophieb.webp",
         "altcover": "Photographie d'un smartphone affichant la page d'accueil du site Sophie Bluel",
-        "demo": "assets/images/sophieb2.png",
+        "demo": "assets/images/sophieb2.webp",
         "altdemo": "Photographie d'un ordinateur et d'un smartphone affichant la page d'accueil du site Sophie Bluel",
         "description": [
             {
@@ -98,9 +98,9 @@
     {
         "title": "Print it",
         "subtitle": "Rendre plus dynamique le site web statique en incorporant un carrousel interactif.",
-        "cover": "assets/images/printit.png",
+        "cover": "assets/images/printit.webp",
         "altcover": "Photographie d'un smartphone affichant la page d'accueil du site Print-It",
-        "demo": "assets/images/printit2.png",
+        "demo": "assets/images/printit2.webp",
         "altdemo": "Photographie d'un ordinateur affichant la page d'accueil du site Print-It",
         "description": [
             {
@@ -130,9 +130,9 @@
     {
         "title": "Ohmyfood",
         "subtitle": "Optimisation de l'expérience utilisateur sur un site mobile en intégrant des animations CSS à son interface",
-        "cover": "assets/images/ohmyfood.png",
+        "cover": "assets/images/ohmyfood.webp",
         "altcover": "Photographie d'un smartphone affichant la page d'accueil du site Ohmyfood",
-        "demo": "assets/images/ohmyfood2.png",
+        "demo": "assets/images/ohmyfood2.webp",
         "altdemo": "Photographie d'un ordinateur et d'un smartphone affichant la page d'accueil du site Ohmyfood",
         "description": [
             {
@@ -162,9 +162,9 @@
     {
         "title": "Booki",
         "subtitle": "Conception de la page principale du site d'une agence de voyage avec HTML & CSS",
-        "cover": "assets/images/booki.png",
+        "cover": "assets/images/booki.webp",
         "altcover": "Photographie d'un smartphone affichant la page d'accueil du site Booki",
-        "demo": "assets/images/booki2.png",
+        "demo": "assets/images/booki2.webp",
         "altdemo": "Photographie d'un ordinateur et d'un smartphone affichant la page d'accueil du site Booki",
         "description": [
             {
