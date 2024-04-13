@@ -355,7 +355,7 @@ ul {
 
   figure {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 15px 0;
@@ -365,7 +365,11 @@ ul {
   img {
     width: 80px;
     height: auto;
-    margin: 0 auto;
+    margin-left: 20px;
+  }
+
+  i{
+    margin-right: 20px;
   }
 }
 
