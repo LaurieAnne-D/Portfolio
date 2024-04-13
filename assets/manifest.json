@@ -4,7 +4,12 @@
     "description": "Developpeuse web basée en Martinique, ma spécialité réside dans le développement front-end, où je conçois des interfaces intuitives et attrayantes.Explorez mon portfolio et n'hésitez pas à me contacter pour échanger sur votre projet.",
     "icons": [
         {
-            "src": "assets/logo/lounelogoarr.png",
+            "src": "assets/logo/logoarr.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/logo/logo.png",
             "sizes": "192x192",
             "type": "image/png"
         }
