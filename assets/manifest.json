@@ -1,18 +1,18 @@
 {
     "name": "Laurie-Anne Doré - Developpeuse web en Martinique",
-    "short_name": "Loune.",
+    "short_name": "Loune.dev",
     "description": "Developpeuse web basée en Martinique, ma spécialité réside dans le développement front-end, où je conçois des interfaces intuitives et attrayantes.Explorez mon portfolio et n'hésitez pas à me contacter pour échanger sur votre projet.",
     "icons": [
         {
-            "src": "assets/logo/logocoralb.svg",
+            "src": "assets/logo/lounelogoarr.png",
             "sizes": "192x192",
-            "type": "image/svg+xml"
+            "type": "image/png"
         }
     ],
     "start_url": "index.html",
     "display": "standalone",
     "background_color": "#f4efeb",
-    "theme_color": "#f0743e",
+    "theme_color": "#f4efeb",
     "orientation": "any",
     "lang": "fr",
     "prefer_related_applications": false,
